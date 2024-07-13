@@ -180,7 +180,28 @@
           background-position: 0% 50%;
         }
       }
-	  
+    /* The Modal (background) */
+    .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #c9a65b;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #7a0000;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+
 /* Media Queries for Mobile Devices */
 @media screen and (max-width: 600px) {
     .sidenav {
@@ -242,7 +263,7 @@
   <a href="https://legionkillfeed.github.io/DayZ/Tools/trader-pricing"><span class="material-icons-sharp">note_add</span>Shoppi Pricing Tool</a>
   <a href="https://legionkillfeed.github.io/DayZ/Terms-of-Service"><span class="material-icons-sharp">policy</span>Terms of Service</a>
   <a href="https://legionkillfeed.github.io/DayZ/Privacy-Policy"><span class="material-icons-sharp">security</span>Privacy Policy</a>
-  <a href="https://business.gov.au/planning/protect-your-brand-idea-or-creation/copyright"><span class="material-icons-sharp">copyright</span>Copyright 2024</a>
+  <a href="#" id="copyrightBtn"><span class="material-icons-sharp">copyright</span>Copyright 2024</a>
   <a href="https://ko-fi.com/LegionKillfeed"><span class="material-icons-sharp">subscriptions</span>Subscribe/Pricing</a>
   <a href="https://discord.gg/LegionKillfeed"><span class="material-icons-sharp">forum</span>Discord</a>
 	</div>
@@ -251,6 +272,9 @@
 			<div id="content"></div>
 		</div>
     </div>
+
+    <!-- Placeholder for the Modal -->
+    <div id="modalPlaceholder"></div>
 
     <script>
         function toggleInfo(container) {
@@ -686,7 +710,35 @@
                 document.getElementById('output').textContent = jsonOutput;
             }
         });
-    </script>
-</body>
+    // Function to load the modal HTML from a file
+    function loadModal() {
+        fetch('https://legionkillfeed.github.io/DayZ/static/modal.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('modalPlaceholder').innerHTML = data;
+            var modal = document.getElementById("myModal");
+            var btn = document.getElementById("copyrightBtn");
+            var span = document.getElementsByClassName("close")[0];
 
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+    }
+
+    // Load the modal when the page loads
+    window.onload = loadModal;
+</script>
+
+</body>
 </html>
