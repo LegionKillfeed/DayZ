@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Legion Killfeed Shoppi Tool</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content="💱 Shoppi Pricing Tool">
+    <meta property="og:image" content="https://legionkillfeed.github.io/static/Legion.png">
+    <meta property="og:url" content="https://legionkillfeed.github.io/Tools/trader-pricing">
+    <meta property="og:type" content="website">
+    <meta property="og:image:alt" content="Legion Killfeed Logo">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image:width" content="256">
+    <meta property="og:image:height" content="256">
+    <meta name="theme-color" content="#ba9849">
+    
+    <!-- oEmbed Link -->
+    <link type="application/json+oembed" href="https://legionkillfeed.github.io/static/discord_embed.json" />
+    
+    <meta name="title" content="Legion Killfeed for DayZ">
+    <meta name="description" content="Trader Pricing Tool">
+    <meta name="keywords" content="Legion Killfeed, killfeed, commands, discord bot, dayz bot, dayz tools, dayzOffline, dayz community, dayz killfeed, dayzkillfeed.com, skynet killfeed, dayz++, Legion DayZ, Legion DayZ Killfeed, skynet, dayz, official, official dayz">
+    <meta name="robots" content="index, follow">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "name": "Legion Killfeed for DayZ",
+        "url": "https://legionkillfeed.github.io/Tools/trader-pricing",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://legionkillfeed.github.io/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "image": "https://legionkillfeed.github.io/static/Legion.png",
+        "description": "Shoppi Pricing Tool",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Legion Killfeed for DayZ",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://legionkillfeed.github.io/static/Legion.png"
+            }
+        }
+    }
+    </script>
+<style>
+* {
+  box-sizing: border-box;
+  color: #B8A66A;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #B8A66A;
+}
+
+body {
+  background: linear-gradient(90deg, #ffe2ab, #525252, #ffe2ab, #1f1f1f, #ffe2ab, #272727);
+  background-size: 300% 300%;
+  animation: gradient 25s ease infinite;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #3d0101;
+  background: #000000;
+  color: #c7a76c;
+}
+.more-info {
+  display: none;
+}
+.expandable {
+  cursor: pointer;
+  color: rgb(197, 160, 109);
+  text-decoration: underline;
+}
+
+.section {
+  margin-bottom: 20px;
+  background: #221f1f;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(78, 78, 78, 0.767);
+}
+
+.section p {
+  margin: 10px 0;
+  background: #000000;
+  color: #cab469;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  background: linear-gradient(90deg, #000000, #6e6d6d, #000000, #494949, #000000, #464646);
+  background-size: 300% 300%;
+  animation: gradient 25s ease infinite;
+}
+.generate-form {
+  margin-bottom: 20px;
+}
+
+.generate-form label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.generate-form .input-box {
+  padding: 5px;
+  margin-right: 10px;
+  background-color: #f1c86fec;
+  color: #000000ec;
+}
+
+.generate-form .submit {
+  padding: 10px 20px; /* Changed padding */
+  background-color: #000000;
+  color: #cca246ec;
+  border: none;
+  cursor: pointer;
+  font-size: 16px; /* Increased font size */
+  border-radius: 5px; /* Added border radius */
+  transition: background-color 0.3s ease; /* Added transition */
+}
+
+.generate-form .submit:hover {
+  background-color: #6b6b6b;
+}
+
+.multiplier-form {
+  margin-bottom: 20px;
+}
+
+.multiplier-form label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.multiplier-form .input-box {
+  padding: 5px;
+  margin-right: 10px;
+  background-color: #f1c86fec;
+  color: #000000ec;
+}
+
+.multiplier-form .submit {
+  padding: 5px 10px;
+  background-color: #3f3b3b;
+  color: #cca246ec;
+  border: none;
+  cursor: pointer;
+}
+
+.multiplier-form .submit:hover {
+  background-color: #616161;
+}
+
+#payout-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #a8895b;
+  color: #000000;
+  margin-top: 20px;
+}
+
+#payout-table td {
+  border: 1px solid #000000;
+  padding: 8px;
+  text-align: left;
+  background-color: #b88b59;
+  color: #000000;
+}
+
+#payout-table th {
+  background-color: #bd9159;
+  color: #000000;
+}
+
+.section ul {
+  list-style-type: none;
+  background: #141010;
+  color: #b39867;
+  padding: 0;
+}
+.section ul li {
+  background: #000000;
+  color: #cab469;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.section ul li a {
+  color: rgb(221, 176, 125);
+}
+
+/* Style the side navigation */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  color: #d1af64;
+  overflow-x: hidden;
+  transition: 0.5s; /* Added transition */
+}
+
+/* Side navigation links */
+.sidenav a {
+  color: #F7DA87;
+  background-color: #000000;
+  padding: 12px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+    background: linear-gradient(90deg, #ffe2ab, #bebebe, #ffe2ab, #443f3f, #ffe2ab, #666565);
+    background-size: 300% 300%;
+    color: #0c0b0a;
+    animation: gradient 25s ease infinite;
+}
+
+/* Style the content */
+.content {
+  margin-left: 200px;
+  padding-left: 20px;
+}
+
+button {
+  color: #dfa833;
+}
+
+.sidenav .logo {
+  display: flex;
+  align-items: center;
+}
+
+.sidenav .logo img {
+  width: 100%;
+  height: auto;
+  max-width: 50px;
+  margin-right: 10px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Media Queries for Mobile Devices */
+@media screen and (max-width: 600px) {
+    .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidenav a {
+        float: left;
+        padding: 15px;
+    }
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+    .content {
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .generate-form label, .multiplier-form label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .generate-form .input-box, .multiplier-form .input-box {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .generate-form .submit, .multiplier-form .submit {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .generate-form select, .multiplier-form select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .section ul li {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+</style>
+  <script>
+  function toggleInfo(container) {
+    var info = container.nextElementSibling;
+    if (info.style.display === "none" || info.style.display === "") {
+      info.style.display = "block";
+    } else {
+      info.style.display = "none";
+    }
+  }
+  </script>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="https://legionkillfeed.github.io/home">
+  <div class="logo">
+    <img alt="Legion-Shield" src="https://legionkillfeed.github.io/static/Legion.png"/>
+    <h4><span class="logotext">Legion Killfeed</span></h4>
+  </div>
+  </a>
+  <a href="https://legionkillfeed.github.io/commands"><span class="material-icons-sharp">apps</span>Commands & Usage</a>
+  <a href="https://legionkillfeed.github.io/Tools/economy-calculator"><span class="material-icons-sharp">calculate</span>Economy Calculator</a>
+  <a href="https://legionkillfeed.github.io/Tools/trader-pricing"><span class="material-icons-sharp">note_add</span>Shoppi Pricing Tool</a>
+  <a href="https://legionkillfeed.github.io/Terms-of-Service"><span class="material-icons-sharp">policy</span>Terms of Service</a>
+  <a href="https://legionkillfeed.github.io/Privacy-Policy"><span class="material-icons-sharp">security</span>Privacy Policy</a>
+  <a href="https://business.gov.au/planning/protect-your-brand-idea-or-creation/copyright"><span class="material-icons-sharp">copyright</span>Copyright 2024</a>
+  <a href="https://ko-fi.com/LegionKillfeed"><span class="material-icons-sharp">subscriptions</span>Subscribe/Pricing</a>
+  <a href="https://discord.gg/LegionKillfeed"><span class="material-icons-sharp">forum</span>Discord</a>
+</div>
+
+<div class="content">
+    
+    <div class="container">
+        <div class="section">
+            <h1>Generate Items and Attachments</h1>
+            
+            <ul>
+                <li>You can set item pricing 0000.00 format, no currency symbol, there is a tool to do this here.</li>
+
+                <li>Enable items in the shop by assigning a price in correct format and setting inStock to 0</li>
+                <li>0=Unlimited, -1 = Disabled or just delete from file to disable that from trader or set to a desired quantity</li>
+                
+                <li>You can literally strip the file down to 5 json entries with 1000 attachments if you wanted to, we will not be held responsible for issues caused by this feature, please ensure you spell the item names right to prevent incorrect entries being posted on your server.</li>
+                
+                <li>You can attach multiple items under one item as attachments, but don't put vehicles as attachments, they must be under the main item name.</li></ul>
+            <div class="generate-form">
+                <label for="item-select">Select Item:</label>
+                <select id="item-select"></select>
+            </div>
+            <div class="generate-form">
+                <label for="attachment-select">Select Attachment:</label>
+                <select id="attachment-select"></select>
+            </div>
+            <div class="generate-form">
+                <label for="price-input">Price:</label>
+                <input type="number" class="input-box" id="price-input" step="0.01" min="0" value="0">
+            </div>
+            <div class="generate-form">
+                <label for="stock-input">In Stock:</label>
+                <input type="number" class="input-box" id="stock-input" step="1" min="0" value="0">
+            </div>
+            <div class="generate-form">
+                <button class="submit" id="add-item" type="button">Add Item</button>
+            </div>
+            <div class="generate-form">
+                <button class="submit" id="generate-file" type="button">Generate File</button>
+            </div>
+            <pre id="output"></pre>
+        </div>
+        <div class="section">
+            <h2>Generate shopItems.json File from cfgspawnabletypes.xml</h2>
+            <div class="generate-form">
+                <label for="xml-upload">Upload cfgspawnabletypes.xml:</label>
+                <input type="file" id="xml-upload" accept=".xml">
+            </div>
+            <div class="generate-form">
+                <button class="submit" id="generate-shop-file" type="button">Generate ShopItems File</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("DOM fully loaded and parsed");
+
+            
+            // Initialize the dropdowns
+            const types = [
+                'ACOGOptic', 'ACOGOptic_6x', 'AK101', 'AK101_Black', 'AK101_Green', 'AK74', 'AK74_Black', 'AK74_Green',
+                'AK74_Hndgrd', 'AK74_WoodBttstck', 'AKM', 'AKS74U', 'AKS74U_Black', 'AKS74U_Bttstck', 'AKS74U_Green',
+                'AK_Bayonet', 'AK_FoldingBttstck', 'AK_FoldingBttstck_Black', 'AK_FoldingBttstck_Green', 'AK_PlasticBttstck',
+                'AK_PlasticBttstck_Black', 'AK_PlasticBttstck_Green', 'AK_PlasticHndgrd', 'AK_RailHndgrd', 'AK_RailHndgrd_Black',
+                'AK_RailHndgrd_Green', 'AK_Suppressor', 'AK_WoodBttstck', 'AK_WoodBttstck_Black', 'AK_WoodBttstck_Camo',
+                'AK_WoodHndgrd', 'AK_WoodHndgrd_Black', 'AK_WoodHndgrd_Camo', 'ASVAL', 'AgaricusMushroom', 'AirborneMask',
+                'AlarmClock_Blue', 'AlarmClock_Green', 'AlarmClock_Red', 'AliceBag_Black', 'AliceBag_Camo', 'AliceBag_Green',
+                'AmmoBox', 'AmmoBox_00buck_10rnd', 'AmmoBox_12gaRubberSlug_10Rnd', 'AmmoBox_12gaSlug_10Rnd', 'AmmoBox_22_50Rnd',
+                'AmmoBox_308WinTracer_20Rnd', 'AmmoBox_308Win_20Rnd', 'AmmoBox_357_20Rnd', 'AmmoBox_380_35rnd',
+                'AmmoBox_45ACP_25rnd', 'AmmoBox_545x39Tracer_20Rnd', 'AmmoBox_545x39_20Rnd', 'AmmoBox_556x45Tracer_20Rnd',
+                'AmmoBox_556x45_20Rnd', 'AmmoBox_762x39Tracer_20Rnd', 'AmmoBox_762x39_20Rnd', 'AmmoBox_762x54Tracer_20Rnd',
+                'AmmoBox_762x54_20Rnd', 'AmmoBox_9x19_25rnd', 'AmmoBox_9x39AP_20Rnd', 'AmmoBox_9x39_20Rnd', 'Ammo_12gaPellets',
+                'Ammo_12gaRubberSlug', 'Ammo_12gaSlug', 'Ammo_22', 'Ammo_308Win', 'Ammo_308WinTracer', 'Ammo_357', 'Ammo_380',
+                'Ammo_40mm_Chemgas', 'Ammo_40mm_Explosive', 'Ammo_40mm_Smoke_Black', 'Ammo_40mm_Smoke_Green', 'Ammo_40mm_Smoke_Red',
+                'Ammo_40mm_Smoke_White', 'Ammo_45ACP', 'Ammo_545x39', 'Ammo_545x39Tracer', 'Ammo_556x45', 'Ammo_556x45Tracer',
+                'Ammo_762x39', 'Ammo_762x39Tracer', 'Ammo_762x54', 'Ammo_762x54Tracer', 'Ammo_9x19', 'Ammo_9x39', 'Ammo_9x39AP',
+                'Ammo_CupidsBolt', 'Ammo_Flare', 'Ammo_FlareBlue', 'Ammo_FlareGreen', 'Ammo_FlareRed', 'Ammo_HuntingBolt',
+                'Ammo_ImprovisedBolt_1', 'Ammo_ImprovisedBolt_2', 'AnniversaryBox', 'Anniversary_FireworksLauncher',
+                'AntiChemInjector', 'AntiPestsSpray', 'Apple', 'Armband_APA', 'Armband_Altis', 'Armband_BabyDeer', 'Armband_Bear',
+                'Armband_Black', 'Armband_Blue', 'Armband_Bohemia', 'Armband_BrainZ', 'Armband_CDF', 'Armband_CHEL', 'Armband_CMC',
+                'Armband_Cannibals', 'Armband_Chedaki', 'Armband_Chernarus', 'Armband_Crook', 'Armband_DayZ', 'Armband_Green',
+                'Armband_HunterZ', 'Armband_Livonia', 'Armband_LivoniaArmy', 'Armband_LivoniaPolice', 'Armband_NAPA', 'Armband_NSahrani',
+                'Armband_Orange', 'Armband_Pink', 'Armband_Pirates', 'Armband_RSTA', 'Armband_Red', 'Armband_Refuge', 'Armband_Rex',
+                'Armband_Rooster', 'Armband_SSahrani', 'Armband_Snake', 'Armband_TEC', 'Armband_UEC', 'Armband_White', 'Armband_Wolf',
+                'Armband_Yellow', 'Armband_Zagorky', 'Armband_Zenit', 'ArmyPouch_Beige', 'ArmyPouch_Black', 'ArmyPouch_Camo',
+                'ArmyPouch_Green', 'AssaultBag_Black', 'AssaultBag_Green', 'AssaultBag_Ttsko', 'AthleticShoes_Black', 'AthleticShoes_Blue',
+                'AthleticShoes_Brown', 'AthleticShoes_Green', 'AthleticShoes_Grey', 'Aug', 'AugShort', 'AuriculariaMushroom',
+                'AviatorGlasses', 'B95', 'BDUJacket', 'BDUPants', 'BUISOptic', 'Bait', 'BakedBeansCan', 'BakedBeansCan_Opened',
+                'Balaclava3Holes_Beige', 'Balaclava3Holes_Black', 'Balaclava3Holes_Blue', 'Balaclava3Holes_Green', 'BalaclavaMask_Beige',
+                'BalaclavaMask_Black', 'BalaclavaMask_Blackskull', 'BalaclavaMask_Blue', 'BalaclavaMask_Green', 'BalaclavaMask_Pink',
+                'BalaclavaMask_White', 'BallisticHelmet_BDU', 'BallisticHelmet_Black', 'BallisticHelmet_Desert', 'BallisticHelmet_Green',
+                'BallisticHelmet_UN', 'BallisticHelmet_Woodland', 'BandageDressing', 'Bandana_Blackpattern', 'Bandana_Camopattern',
+                'Bandana_Greenpattern', 'Bandana_Polkapattern', 'Bandana_Redpattern', 'BarbedBaseballBat', 'BarbedWire', 'Bark_Birch',
+                'Bark_Oak', 'BarrelHoles_Blue', 'BarrelHoles_Green', 'BarrelHoles_Red', 'BarrelHoles_Yellow', 'Barrel_Blue', 'Barrel_Green',
+                'Barrel_Red', 'Barrel_Yellow', 'BaseRadio', 'BaseballBat', 'BaseballCap_Beige', 'BaseballCap_Black', 'BaseballCap_Blue',
+                'BaseballCap_CMMG_Black', 'BaseballCap_CMMG_Pink', 'BaseballCap_Camo', 'BaseballCap_Olive', 'BaseballCap_Pink',
+                'BaseballCap_Red', 'Battery9V', 'BatteryCharger', 'BeanieHat_Beige', 'BeanieHat_Black', 'BeanieHat_Blue', 'BeanieHat_Brown',
+                'BeanieHat_Green', 'BeanieHat_Grey', 'BeanieHat_Pink', 'BeanieHat_Red', 'BearPelt', 'BearSteakMeat', 'BearTrap', 'Bear_Beige',
+                'Bear_Dark', 'Bear_Pink', 'Bear_White', 'Binoculars', 'Bitterlings', 'BloodBagEmpty', 'BloodBagFull', 'BloodBagIV',
+                'BloodTestKit', 'Blouse_Blue', 'Blouse_Green', 'Blouse_Violet', 'Blouse_White', 'Blowtorch', 'BoarSteakMeat',
+                'BoletusMushroom', 'BomberJacket_Black', 'BomberJacket_Blue', 'BomberJacket_Brown', 'BomberJacket_Grey', 'BomberJacket_Maroon',
+                'BomberJacket_Olive', 'BomberJacket_SkyBlue', 'Bone', 'BoneBait', 'BoneHook', 'BoneKnife', 'Bonfire', 'BoonieHat_Black',
+                'BoonieHat_Blue', 'BoonieHat_DPM', 'BoonieHat_Dubok', 'BoonieHat_Flecktran', 'BoonieHat_NavyBlue', 'BoonieHat_Olive',
+                'BoonieHat_Orange', 'BoonieHat_Red', 'BoonieHat_Tan', 'BoxCerealCrunchin', 'BrassKnuckles_Dull', 'BrassKnuckles_Shiny',
+                'Breeches_Beetcheck', 'Breeches_Beige', 'Breeches_Black', 'Breeches_Blackcheck', 'Breeches_Blue', 'Breeches_Browncheck',
+                'Breeches_Green', 'Breeches_Pink', 'Breeches_Red', 'Breeches_White', 'BrisketSpread', 'BrisketSpread_Opened', 'Broom',
+                'Broom_Birch', 'BurlapSack', 'BurlapSackCover', 'BurlapStrip', 'CZ527', 'CZ550', 'CZ61', 'CZ75', 'CableReel', 'Camonet',
+                'CanOpener', 'Candycane_Green', 'Candycane_Red', 'Candycane_RedGreen', 'Candycane_Yellow', 'CaninaBerry', 'CanisterGasoline',
+                'Canteen', 'CanvasBag_Medical', 'CanvasBag_Olive', 'CanvasPantsMidi_Beige', 'CanvasPantsMidi_Blue', 'CanvasPantsMidi_Grey',
+                'CanvasPantsMidi_Red', 'CanvasPantsMidi_Violet', 'CanvasPants_Beige', 'CanvasPants_Blue', 'CanvasPants_Grey', 'CanvasPants_Red',
+                'CanvasPants_Violet', 'CarBattery', 'CarRadiator', 'CarTent', 'CargoPants_Beige', 'CargoPants_Black', 'CargoPants_Blue',
+                'CargoPants_Green', 'CargoPants_Grey', 'Carp', 'CarpFilletMeat', 'CatFoodCan', 'CatFoodCan_Opened', 'Cauldron', 'Chainmail',
+                'Chainmail_Coif', 'Chainmail_Leggings', 'CharcoalTablets', 'Chemlight_Blue', 'Chemlight_Green', 'Chemlight_Red', 'Chemlight_White',
+                'Chemlight_Yellow', 'ChernarusMap', 'ChernarusMap_Open', 'ChernarusSportShirt', 'ChestHolster', 'Chestplate', 'ChickenBreastMeat',
+                'ChickenFeather', 'ChildBag_Blue', 'ChildBag_Green', 'ChildBag_Red', 'Chips', 'ChristmasHeadband_Antlers', 'ChristmasHeadband_Gingerbread',
+                'ChristmasHeadband_Trees', 'ChristmasTree', 'CivSedanDoors_BackLeft', 'CivSedanDoors_BackLeft_Black', 'CivSedanDoors_BackLeft_BlackRust',
+                'CivSedanDoors_BackLeft_WhiteRust', 'CivSedanDoors_BackLeft_Wine', 'CivSedanDoors_BackLeft_WineRust', 'CivSedanDoors_BackRight',
+                'CivSedanDoors_BackRight_Black', 'CivSedanDoors_BackRight_BlackRust', 'CivSedanDoors_BackRight_WhiteRust', 'CivSedanDoors_BackRight_Wine',
+                'CivSedanDoors_BackRight_WineRust', 'CivSedanDoors_CoDriver', 'CivSedanDoors_CoDriver_Black', 'CivSedanDoors_CoDriver_BlackRust',
+                'CivSedanDoors_CoDriver_WhiteRust', 'CivSedanDoors_CoDriver_Wine', 'CivSedanDoors_CoDriver_WineRust', 'CivSedanDoors_Driver',
+                'CivSedanDoors_Driver_Black', 'CivSedanDoors_Driver_BlackRust', 'CivSedanDoors_Driver_WhiteRust', 'CivSedanDoors_Driver_Wine',
+                'CivSedanDoors_Driver_WineRust', 'CivSedanHood', 'CivSedanHood_Black', 'CivSedanHood_BlackRust', 'CivSedanHood_WhiteRust',
+                'CivSedanHood_Wine', 'CivSedanHood_WineRust', 'CivSedanTrunk', 'CivSedanTrunk_Black', 'CivSedanTrunk_BlackRust', 'CivSedanTrunk_WhiteRust',
+                'CivSedanTrunk_Wine', 'CivSedanTrunk_WineRust', 'CivSedanWheel', 'CivSedanWheel_Ruined', 'CivilianBelt', 'CivilianSedan',
+                'CivilianSedan_Black', 'CivilianSedan_Wine', 'ClaymoreMine', 'Cleaver', 'Colt1911', 'CombatBoots_Beige', 'CombatBoots_Black',
+                'CombatBoots_Brown', 'CombatBoots_Green', 'CombatBoots_Grey', 'CombatKnife', 'CombinationLock', 'CombinationLock4', 'Compass',
+                'ConstructionHelmet_Blue', 'ConstructionHelmet_Lime', 'ConstructionHelmet_Orange', 'ConstructionHelmet_Red', 'ConstructionHelmet_White',
+                'ConstructionHelmet_Yellow', 'ContaminatedArea_Dynamic', 'CookingStand', 'CourierBag', 'CowPelt', 'CowSteakMeat', 'CowboyHat_Brown',
+                'CowboyHat_black', 'CowboyHat_darkBrown', 'CowboyHat_green', 'CoyoteBag_Brown', 'CoyoteBag_Green', 'Crackers', 'CrookedNose',
+                'Crossbow_Autumn', 'Crossbow_Black', 'Crossbow_Summer', 'Crossbow_Wood', 'Crowbar', 'CrudeMachete', 'DarkMotoHelmet_Black',
+                'DarkMotoHelmet_Blue', 'DarkMotoHelmet_Green', 'DarkMotoHelmet_Grey', 'DarkMotoHelmet_Lime', 'DarkMotoHelmet_Red', 'DarkMotoHelmet_White',
+                'DarkMotoHelmet_Yellow', 'DarkMotoHelmet_YellowScarred', 'DeadChicken_Brown', 'DeadChicken_Spotted', 'DeadChicken_White', 'DeadRabbit',
+                'DeadRooster', 'Deagle', 'Deagle_Gold', 'DeerPelt', 'DeerSteakMeat', 'DenimJacket', 'Derringer_Black', 'Derringer_Grey', 'Derringer_Pink',
+                'DesignerGlasses', 'DirtBikeHelmet_Black', 'DirtBikeHelmet_Blue', 'DirtBikeHelmet_Chernarus', 'DirtBikeHelmet_Green', 'DirtBikeHelmet_Khaki',
+                'DirtBikeHelmet_Mouthguard', 'DirtBikeHelmet_Police', 'DirtBikeHelmet_Red', 'DirtBikeHelmet_Visor', 'DisinfectantAlcohol', 'DisinfectantSpray',
+                'DogFoodCan', 'DogFoodCan_Opened', 'DressShoes_Beige', 'DressShoes_Black', 'DressShoes_Brown', 'DressShoes_Sunburst', 'DressShoes_White',
+                'DryBag_Black', 'DryBag_Blue', 'DryBag_Green', 'DryBag_Orange', 'DryBag_Red', 'DryBag_Yellow', 'DrysackBag_Green', 'DrysackBag_Orange',
+                'DrysackBag_Yellow', 'DuctTape', 'DuffelBagSmall_Camo', 'DuffelBagSmall_Green', 'DuffelBagSmall_Medical', 'EasterEgg', 'ElectronicRepairKit',
+                'Engraved1911', 'Epinephrine', 'EpoxyPutty', 'EyeMask_Black', 'EyeMask_Blue', 'EyeMask_Christmas', 'EyeMask_Dead', 'EyeMask_NewYears',
+                'EyeMask_Red', 'EyeMask_Valentines', 'EyeMask_Yellow', 'EyePatch_Improvised', 'FAL', 'FAMAS', 'FNP45_MRDSOptic', 'FNX45', 'Fabric',
+                'FaceCover_Improvised', 'Fal_FoldingBttstck', 'Fal_OeBttstck', 'FangeKnife', 'FarmingHoe', 'FeetCover_Improvised', 'Fence', 'FenceKit',
+                'FieldShovel', 'FirefighterAxe', 'FirefighterAxe_Black', 'FirefighterAxe_Green', 'FirefighterJacket_Beige', 'FirefighterJacket_Black',
+                'FirefightersHelmet_Red', 'FirefightersHelmet_White', 'FirefightersHelmet_Yellow', 'FirefightersPants_Beige', 'FirefightersPants_Black',
+                'Fireplace', 'FireplaceIndoor', 'Firewood', 'FireworksLauncher', 'FirstAidKit', 'FishNetTrap', 'FishingRod', 'Flag_APA', 'Flag_Altis',
+                'Flag_BabyDeer', 'Flag_Bear', 'Flag_Bohemia', 'Flag_BrainZ', 'Flag_CDF', 'Flag_CHEL', 'Flag_CMC', 'Flag_Cannibals', 'Flag_Chedaki',
+                'Flag_Chernarus', 'Flag_Crook', 'Flag_DayZ', 'Flag_HunterZ', 'Flag_Livonia', 'Flag_LivoniaArmy', 'Flag_LivoniaPolice', 'Flag_NAPA',
+                'Flag_NSahrani', 'Flag_Pirates', 'Flag_RSTA', 'Flag_Refuge', 'Flag_Rex', 'Flag_Rooster', 'Flag_SSahrani', 'Flag_Snake', 'Flag_TEC', 'Flag_UEC',
+                'Flag_White', 'Flag_Wolf', 'Flag_Zagorky', 'Flag_Zenit', 'Flaregun', 'FlashGrenade', 'Flashlight', 'FlatCap_Black', 'FlatCap_BlackCheck',
+                'FlatCap_Blue', 'FlatCap_Brown', 'FlatCap_BrownCheck', 'FlatCap_Grey', 'FlatCap_GreyCheck', 'FlatCap_Red', 'FryingPan', 'FurCourierBag',
+                'FurImprovisedBag', 'GP5GasMask', 'GPSReceiver', 'GardenLime', 'GardenPlot', 'GardenPlotGreenhouse', 'GardenPlotPolytunnel', 'GasMask',
+                'GasMask_Filter', 'GasMask_Filter_Improvised', 'GhillieAtt_Mossy', 'GhillieAtt_Tan', 'GhillieAtt_Woodland', 'GhillieBushrag_Mossy',
+                'GhillieBushrag_Tan', 'GhillieBushrag_Woodland', 'GhillieHood_Mossy', 'GhillieHood_Tan', 'GhillieHood_Woodland', 'GhillieSuit_Mossy',
+                'GhillieSuit_Tan', 'GhillieSuit_Woodland', 'GhillieTop_Mossy', 'GhillieTop_Tan', 'GhillieTop_Woodland', 'GiftBox_Large_1', 'GiftBox_Large_2',
+                'GiftBox_Large_3', 'GiftBox_Large_4', 'GiftBox_Medium_1', 'GiftBox_Medium_2', 'GiftBox_Medium_3', 'GiftBox_Medium_4', 'GiftBox_Small_1',
+                'GiftBox_Small_2', 'GiftBox_Small_3', 'GiftBox_Small_4', 'GiftWrapPaper', 'Glock19', 'GlowPlug', 'GoatPelt', 'GoatSteakMeat',
+                'GorkaEJacket_Autumn', 'GorkaEJacket_Flat', 'GorkaEJacket_PautRev', 'GorkaEJacket_Summer', 'GorkaHelmet', 'GorkaHelmetVisor',
+                'GorkaPants_Autumn', 'GorkaPants_Flat', 'GorkaPants_PautRev', 'GorkaPants_Summer', 'GreatHelm', 'GreenBellPepper', 'Grenade_ChemGas',
+                'Guts', 'Hacksaw', 'Hammer', 'HandDrillKit', 'HandSaw', 'HandcuffKeys', 'Handcuffs', 'HandcuffsLocked', 'HandsCover_Improvised',
+                'HatchbackDoors_CoDriver', 'HatchbackDoors_CoDriver_Blue', 'HatchbackDoors_CoDriver_BlueRust', 'HatchbackDoors_CoDriver_GreenRust',
+                'HatchbackDoors_CoDriver_White', 'HatchbackDoors_CoDriver_WhiteRust', 'HatchbackDoors_Driver', 'HatchbackDoors_Driver_Blue',
+                'HatchbackDoors_Driver_BlueRust', 'HatchbackDoors_Driver_GreenRust', 'HatchbackDoors_Driver_White', 'HatchbackDoors_Driver_WhiteRust',
+                'HatchbackHood', 'HatchbackHood_Blue', 'HatchbackHood_BlueRust', 'HatchbackHood_GreenRust', 'HatchbackHood_White',
+                'HatchbackHood_WhiteRust', 'HatchbackTrunk', 'HatchbackTrunk_Blue', 'HatchbackTrunk_BlueRust', 'HatchbackTrunk_GreenRust',
+                'HatchbackTrunk_White', 'HatchbackTrunk_WhiteRust', 'HatchbackWheel', 'HatchbackWheel_Ruined', 'Hatchback_02', 'Hatchback_02_Black',
+                'Hatchback_02_Blue', 'Hatchback_02_Door_1_1', 'Hatchback_02_Door_1_1_Black', 'Hatchback_02_Door_1_1_BlackRust', 'Hatchback_02_Door_1_1_Blue',
+                'Hatchback_02_Door_1_1_BlueRust', 'Hatchback_02_Door_1_1_RedRust', 'Hatchback_02_Door_1_2', 'Hatchback_02_Door_1_2_Black',
+                'Hatchback_02_Door_1_2_BlackRust', 'Hatchback_02_Door_1_2_Blue', 'Hatchback_02_Door_1_2_BlueRust', 'Hatchback_02_Door_1_2_RedRust',
+                'Hatchback_02_Door_2_1', 'Hatchback_02_Door_2_1_Black', 'Hatchback_02_Door_2_1_BlackRust', 'Hatchback_02_Door_2_1_Blue',
+                'Hatchback_02_Door_2_1_BlueRust', 'Hatchback_02_Door_2_1_RedRust', 'Hatchback_02_Door_2_2', 'Hatchback_02_Door_2_2_Black',
+                'Hatchback_02_Door_2_2_BlackRust', 'Hatchback_02_Door_2_2_Blue', 'Hatchback_02_Door_2_2_BlueRust', 'Hatchback_02_Hood',
+                'Hatchback_02_Hood_Black', 'Hatchback_02_Hood_BlackRust', 'Hatchback_02_Hood_Blue', 'Hatchback_02_Hood_BlueRust', 'Hatchback_02_Hood_RedRust',
+                'Hatchback_02_Trunk', 'Hatchback_02_Trunk_Black', 'Hatchback_02_Trunk_BlackRust', 'Hatchback_02_Trunk_Blue', 'Hatchback_02_Trunk_BlueRust',
+                'Hatchback_02_Trunk_RedRust', 'Hatchback_02_Wheel', 'Hatchback_02_Wheel_Ruined', 'Hatchet', 'HeadCover_Improvised', 'HeadlightH7',
+                'HeadlightH7_Box', 'Headtorch_Black', 'Headtorch_Grey', 'Heatpack', 'HighCapacityVest_Black', 'HighCapacityVest_Olive',
+                'HikingBootsLow_Beige', 'HikingBootsLow_Black', 'HikingBootsLow_Blue', 'HikingBootsLow_Grey', 'HikingBoots_Black', 'HikingBoots_Brown',
+                'HikingJacket_Black', 'HikingJacket_Blue', 'HikingJacket_Green', 'HikingJacket_Red', 'HipPack_Black', 'HipPack_Green', 'HipPack_Medical',
+                'HipPack_Party', 'HockeyHelmet_Black', 'HockeyHelmet_Blue', 'HockeyHelmet_Red', 'HockeyHelmet_White', 'HockeyMask', 'Honey', 'Hoodie_Black',
+                'Hoodie_Blue', 'Hoodie_Brown', 'Hoodie_Green', 'Hoodie_Grey', 'Hoodie_Red', 'Hook', 'HumanSteakMeat', 'HunterPants_Autumn',
+                'HunterPants_Brown', 'HunterPants_Spring', 'HunterPants_Summer', 'HunterPants_Winter', 'HuntingBag', 'HuntingBag_Hannah',
+                'HuntingJacket_Autumn', 'HuntingJacket_Brown', 'HuntingJacket_Spring', 'HuntingJacket_Summer', 'HuntingJacket_Winter', 'HuntingKnife',
+                'HuntingOptic', 'HuntingVest', 'ImprovisedBag', 'ImprovisedExplosive', 'ImprovisedFishingRod', 'ImprovisedSuppressor', 'IodineTincture',
+                'Izh18', 'Izh18Shotgun', 'Izh43Shotgun', 'Jeans_Black', 'Jeans_Blue', 'Jeans_BlueDark', 'Jeans_Brown', 'Jeans_Green', 'Jeans_Grey',
+                'JoggingShoes_Black', 'JoggingShoes_Blue', 'JoggingShoes_Red', 'JoggingShoes_Violet', 'JoggingShoes_White', 'JumpsuitJacket_Blue',
+                'JumpsuitJacket_Gray', 'JumpsuitJacket_Green', 'JumpsuitJacket_Red', 'JumpsuitPants_Blue', 'JumpsuitPants_Green', 'JumpsuitPants_Grey',
+                'JumpsuitPants_Red', 'JungleBoots_Beige', 'JungleBoots_Black', 'JungleBoots_Brown', 'JungleBoots_Green', 'JungleBoots_Olive', 'KashtanOptic',
+                'KazuarOptic', 'KitchenKnife', 'KitchenTimer', 'KobraOptic', 'KukriKnife', 'LabCoat', 'LactariusMushroom', 'LandMineTrap', 'Lard',
+                'LargeGasCanister', 'LargeTent', 'LeatherBelt_Beige', 'LeatherBelt_Black', 'LeatherBelt_Brown', 'LeatherBelt_Natural', 'LeatherGloves_Beige',
+                'LeatherGloves_Black', 'LeatherGloves_Brown', 'LeatherGloves_Natural', 'LeatherHat_Beige', 'LeatherHat_Black', 'LeatherHat_Brown',
+                'LeatherHat_Natural', 'LeatherJacket_Beige', 'LeatherJacket_Black', 'LeatherJacket_Brown', 'LeatherJacket_Natural', 'LeatherKnifeSheath',
+                'LeatherPants_Beige', 'LeatherPants_Black', 'LeatherPants_Brown', 'LeatherPants_Natural', 'LeatherSack_Beige', 'LeatherSack_Black',
+                'LeatherSack_Brown', 'LeatherSack_Natural', 'LeatherSewingKit', 'LeatherShirt_Natural', 'LeatherShoes_Beige', 'LeatherShoes_Black',
+                'LeatherShoes_Brown', 'LeatherShoes_Natural', 'LeatherStorageVest_Beige', 'LeatherStorageVest_Black', 'LeatherStorageVest_Brown',
+                'LeatherStorageVest_Natural', 'LegsCover_Improvised', 'Lockpick', 'LongTorch', 'LongWoodenStick', 'Longhorn', 'LugWrench', 'Lunchmeat',
+                'Lunchmeat_Opened', 'M14', 'M16A2', 'M18SmokeGrenade_Green', 'M18SmokeGrenade_Purple', 'M18SmokeGrenade_Red', 'M18SmokeGrenade_White',
+                'M18SmokeGrenade_Yellow', 'M4A1', 'M4A1_Black', 'M4A1_Green', 'M4_CQBBttstck', 'M4_CarryHandleOptic', 'M4_MPBttstck', 'M4_MPHndgrd',
+                'M4_OEBttstck', 'M4_PlasticHndgrd', 'M4_RISHndgrd', 'M4_RISHndgrd_Black', 'M4_RISHndgrd_Green', 'M4_Suppressor', 'M4_T3NRDSOptic',
+                'M65Jacket_Black', 'M65Jacket_Khaki', 'M65Jacket_Olive', 'M65Jacket_Tan', 'M67Grenade', 'M68Optic', 'M79', 'M9A1_Bayonet', 'MKII', 'MP5K',
+                'MP5_Compensator', 'MP5_PlasticHndgrd', 'MP5_RailHndgrd', 'MP5k_StockBttstck', 'Mace', 'Machete', 'Mackerel', 'MackerelFilletMeat',
+                'MacrolepiotaMushroom', 'Mag_1911_7Rnd', 'Mag_AK101_30Rnd', 'Mag_AK74_30Rnd', 'Mag_AK74_45Rnd', 'Mag_AKM_30Rnd', 'Mag_AKM_Drum75Rnd',
+                'Mag_AKM_Palm30Rnd', 'Mag_Aug_30Rnd', 'Mag_CMAG_10Rnd', 'Mag_CMAG_20Rnd', 'Mag_CMAG_30Rnd', 'Mag_CMAG_40Rnd', 'Mag_CZ527_5rnd',
+                'Mag_CZ550_10Rnd', 'Mag_CZ61_20Rnd', 'Mag_CZ75_15Rnd', 'Mag_Deagle_9rnd', 'Mag_FAL_20Rnd', 'Mag_FAMAS_25Rnd', 'Mag_FNX45_15Rnd',
+                'Mag_Glock_15Rnd', 'Mag_IJ70_8Rnd', 'Mag_M14_10Rnd', 'Mag_M14_20Rnd', 'Mag_MKII_10Rnd', 'Mag_MP5_15Rnd', 'Mag_MP5_30Rnd', 'Mag_P1_8Rnd',
+                'Mag_PP19_64Rnd', 'Mag_Ruger1022_15Rnd', 'Mag_Ruger1022_30Rnd', 'Mag_SSG82_5rnd', 'Mag_STANAG_30Rnd', 'Mag_STANAG_60Rnd', 'Mag_SVD_10Rnd',
+                'Mag_Saiga_5Rnd', 'Mag_Saiga_8Rnd', 'Mag_Saiga_Drum20Rnd', 'Mag_Scout_5Rnd', 'Mag_UMP_25Rnd', 'Mag_VAL_20Rnd', 'Mag_VSS_10Rnd',
+                'Mag_Vikhr_30Rnd', 'Magnum', 'MakarovIJ70', 'ManSuit_Beige', 'ManSuit_Black', 'ManSuit_Blue', 'ManSuit_Brown', 'ManSuit_DarkGrey',
+                'ManSuit_Khaki', 'ManSuit_LightGrey', 'ManSuit_White', 'Marmalade', 'Matchbox', 'MeatTenderizer', 'MedicalScrubsHat_Blue',
+                'MedicalScrubsHat_Green', 'MedicalScrubsHat_White', 'MedicalScrubsPants_Blue', 'MedicalScrubsPants_Green', 'MedicalScrubsPants_White',
+                'MedicalScrubsShirt_Blue', 'MedicalScrubsShirt_Green', 'MedicalScrubsShirt_White', 'MedievalBoots', 'MediumGasCanister', 'MediumTent',
+                'MediumTent_Green', 'MediumTent_Orange', 'Megaphone', 'MetalPlate', 'MetalWire', 'Mich2001Helmet', 'MilitaryBelt', 'MilitaryBeret_CDF',
+                'MilitaryBeret_ChDKZ', 'MilitaryBeret_NZ', 'MilitaryBeret_Red', 'MilitaryBeret_UN', 'MilitaryBoots_Beige', 'MilitaryBoots_Black',
+                'MilitaryBoots_Bluerock', 'MilitaryBoots_Brown', 'MilitaryBoots_Redpunk', 'MimeMask_Female', 'MimeMask_Male', 'MiniDress_BlueChecker',
+                'MiniDress_BlueWithDots', 'MiniDress_BrownChecker', 'MiniDress_GreenChecker', 'MiniDress_Pink', 'MiniDress_PinkChecker', 'MiniDress_RedChecker',
+                'MiniDress_WhiteChecker', 'MorozkoHat', 'Morphine', 'Mosin9130', 'Mosin9130_Black', 'Mosin9130_Camo', 'Mosin9130_Green', 'Mosin_Bayonet',
+                'Mosin_Compensator', 'MotoHelmet_Black', 'MotoHelmet_Blue', 'MotoHelmet_Green', 'MotoHelmet_Grey', 'MotoHelmet_Lime', 'MotoHelmet_Red',
+                'MotoHelmet_White', 'MotoHelmet_Yellow', 'MountainBag_Blue', 'MountainBag_Green', 'MountainBag_Orange', 'MountainBag_Red', 'MouthRag',
+                'Mp133Shotgun', 'NBCBootsGray', 'NBCBootsYellow', 'NBCGlovesGray', 'NBCGlovesYellow', 'NBCHoodGray', 'NBCHoodYellow', 'NBCJacketGray',
+                'NBCJacketYellow', 'NBCPantsGray', 'NBCPantsYellow', 'NVGHeadstrap', 'NVGoggles', 'Nail', 'NailBox', 'NailedBaseballBat', 'Netting',
+                'NioshFaceMask', 'NorseHelm', 'NurseDress_Blue', 'NurseDress_White', 'NylonKnifeSheath', 'OKZKCap_Beige', 'OKZKCap_Green', 'OMNOGloves_Brown',
+                'OMNOGloves_Gray', 'OfficerHat', 'OffroadHatchback', 'OffroadHatchback_Blue', 'OffroadHatchback_White', 'Offroad_02', 'Offroad_02_Door_1_1',
+                'Offroad_02_Door_1_1_Rust', 'Offroad_02_Door_1_2', 'Offroad_02_Door_1_2_Rust', 'Offroad_02_Door_2_1', 'Offroad_02_Door_2_1_Rust',
+                'Offroad_02_Door_2_2', 'Offroad_02_Door_2_2_Rust', 'Offroad_02_Hood', 'Offroad_02_Trunk', 'Offroad_02_Trunk_Rust', 'Offroad_02_Wheel',
+                'OrientalMachete', 'OrienteeringCompass', 'OvenIndoor', 'P1', 'PP19', 'PP19_Bttstck', 'PSO11Optic', 'PSO1Optic', 'PUScopeOptic',
+                'PaddedGloves_Beige', 'PaddedGloves_Brown', 'PaddedGloves_Threat', 'PainkillerTablets', 'Pajka', 'Pajka_Opened', 'Paper',
+                'ParamedicJacket_Blue', 'ParamedicJacket_Crimson', 'ParamedicJacket_Green', 'ParamedicPants_Blue', 'ParamedicPants_Crimson',
+                'ParamedicPants_Green', 'PartyTent', 'PartyTent_Blue', 'PartyTent_Brown', 'PartyTent_Lunapark', 'Pate', 'Pate_Opened', 'PeachesCan',
+                'PeachesCan_Opened', 'Pear', 'Pen_Black', 'Pen_Blue', 'Pen_Green', 'Pen_Red', 'PepperSeeds', 'PepperSeedsPack', 'PersonalRadio',
+                'PetrolLighter', 'PetushokHat_Black', 'PetushokHat_Green', 'PetushokHat_Yellow', 'Pickaxe', 'PigPelt', 'PigSteakMeat',
+                'PileOfWoodenPlanks', 'PilotkaCap', 'Pipe', 'PipeWrench', 'PistolOptic', 'PistolSuppressor', 'Pitchfork', 'PlantMaterial',
+                'Plant_Pepper', 'Plant_Potato', 'Plant_Pumpkin', 'Plant_Tomato', 'Plant_Zucchini', 'Plastic_Explosive', 'PlateCarrierHolster',
+                'PlateCarrierHolster_Black', 'PlateCarrierHolster_Camo', 'PlateCarrierHolster_Green', 'PlateCarrierPouches', 'PlateCarrierPouches_Black',
+                'PlateCarrierPouches_Camo', 'PlateCarrierPouches_Green', 'PlateCarrierVest', 'PlateCarrierVest_Black', 'PlateCarrierVest_Camo',
+                'PlateCarrierVest_Green', 'PleurotusMushroom', 'Pliers', 'Plum', 'PoliceCap', 'PoliceJacket', 'PoliceJacketOrel', 'PolicePants',
+                'PolicePantsOrel', 'PoliceVest', 'PorkCan', 'PorkCan_Opened', 'PortableGasLamp', 'PortableGasStove', 'Pot', 'Potato', 'PotatoSeed',
+                'PowderedMilk', 'PowerGenerator', 'PressVest_Blue', 'PressVest_LightBlue', 'PrisonUniformJacket', 'PrisonUniformPants',
+                'PrisonerCap', 'Pumpkin', 'PumpkinHelmet', 'PumpkinSeeds', 'PumpkinSeedsPack', 'PurificationTablets', 'QuiltedJacket_Black',
+                'QuiltedJacket_Blue', 'QuiltedJacket_Green', 'QuiltedJacket_Grey', 'QuiltedJacket_Orange', 'QuiltedJacket_Red', 'QuiltedJacket_Violet',
+                'QuiltedJacket_Yellow', 'RDG2SmokeGrenade_Black', 'RDG2SmokeGrenade_White', 'RGD5Grenade', 'RabbitLegMeat', 'RabbitPelt', 'RabbitSnareTrap',
+                'RadarCap_Black', 'RadarCap_Blue', 'RadarCap_Brown', 'RadarCap_Green', 'RadarCap_Red', 'Rag', 'Raincoat_Black', 'Raincoat_Blue',
+                'Raincoat_Green', 'Raincoat_Orange', 'Raincoat_Pink', 'Raincoat_Red', 'Raincoat_Yellow', 'Rangefinder', 'ReflexOptic', 'ReflexVest',
+                'RemoteDetonator', 'RemoteDetonatorReceiver', 'RemoteDetonatorTrigger', 'Repeater', 'Rice', 'RidersJacket_Black', 'Roadflare', 'Rope',
+                'RopeBelt', 'Ruger1022', 'SKS', 'SKS_Bayonet', 'SSG82', 'SVD', 'Saiga', 'Saiga_Bttstck', 'SalineBag', 'SalineBagIV', 'SaltySticks',
+                'SambucusBerry', 'SantasBeard', 'SantasHat', 'Sardines', 'SardinesCan', 'SardinesCan_Opened', 'SawedoffB95', 'SawedoffFAMAS', 'SawedoffIzh18',
+                'SawedoffIzh18Shotgun', 'SawedoffIzh43Shotgun', 'SawedoffMagnum', 'SawedoffMosin9130', 'SawedoffMosin9130_Black', 'SawedoffMosin9130_Camo',
+                'SawedoffMosin9130_Green', 'Scout', 'Scout_Chernarus', 'Scout_Livonia', 'Screwdriver', 'SeaChest', 'Sedan_02', 'Sedan_02_Door_1_1',
+                'Sedan_02_Door_1_1_Grey', 'Sedan_02_Door_1_1_GreyRust', 'Sedan_02_Door_1_1_Red', 'Sedan_02_Door_1_1_RedRust', 'Sedan_02_Door_1_1_YellowRust',
+                'Sedan_02_Door_1_2', 'Sedan_02_Door_1_2_Grey', 'Sedan_02_Door_1_2_GreyRust', 'Sedan_02_Door_1_2_Red', 'Sedan_02_Door_1_2_RedRust',
+                'Sedan_02_Door_1_2_YellowRust', 'Sedan_02_Door_2_1', 'Sedan_02_Door_2_1_Grey', 'Sedan_02_Door_2_1_GreyRust', 'Sedan_02_Door_2_1_Red',
+                'Sedan_02_Door_2_1_RedRust', 'Sedan_02_Door_2_1_YellowRust', 'Sedan_02_Door_2_2', 'Sedan_02_Door_2_2_Grey', 'Sedan_02_Door_2_2_GreyRust',
+                'Sedan_02_Door_2_2_Red', 'Sedan_02_Door_2_2_RedRust', 'Sedan_02_Door_2_2_YellowRust', 'Sedan_02_Grey', 'Sedan_02_Hood', 'Sedan_02_Hood_Grey',
+                'Sedan_02_Hood_GreyRust', 'Sedan_02_Hood_Red', 'Sedan_02_Hood_RedRust', 'Sedan_02_Hood_YellowRust', 'Sedan_02_Red', 'Sedan_02_Trunk',
+                'Sedan_02_Trunk_Grey', 'Sedan_02_Trunk_GreyRust', 'Sedan_02_Trunk_Red', 'Sedan_02_Trunk_RedRust', 'Sedan_02_Trunk_YellowRust', 'Sedan_02_Wheel',
+                'Sedan_02_Wheel_Ruined', 'SewingKit', 'SharpWoodenStick', 'SheepPelt', 'SheepSteakMeat', 'ShelterFabric', 'ShelterKit', 'ShelterLeather',
+                'ShelterSite', 'ShelterStick', 'Shirt_BlueCheck', 'Shirt_BlueCheckBright', 'Shirt_GreenCheck', 'Shirt_PlaneBlack', 'Shirt_RedCheck',
+                'Shirt_WhiteCheck', 'ShortJeans_Black', 'ShortJeans_Blue', 'ShortJeans_Brown', 'ShortJeans_Darkblue', 'ShortJeans_Green', 'ShortJeans_Red',
+                'Shovel', 'Sickle', 'SkateHelmet_Black', 'SkateHelmet_Blue', 'SkateHelmet_Gray', 'SkateHelmet_Green', 'SkateHelmet_Red', 'Skirt_Blue',
+                'Skirt_Red', 'Skirt_White', 'Skirt_Yellow', 'SlacksPants_Beige', 'SlacksPants_Black', 'SlacksPants_Blue', 'SlacksPants_Brown', 'SlacksPants_DarkGrey',
+                'SlacksPants_Khaki', 'SlacksPants_LightGrey', 'SlacksPants_White', 'SledgeHammer', 'SlicedPumpkin', 'Slingbag_Black', 'Slingbag_Brown',
+                'Slingbag_Gray', 'SmallFishTrap', 'SmallGasCanister', 'SmallGuts', 'SmallProtectorCase', 'SmallStone', 'SmershBag', 'SmershVest', 'Sneakers_Black',
+                'Sneakers_Gray', 'Sneakers_Green', 'Sneakers_Red', 'Sneakers_White', 'SodaCan_Cola', 'SodaCan_Fronta', 'SodaCan_Kvass', 'SodaCan_Pipsi',
+                'SodaCan_Spite', 'SpaghettiCan', 'SpaghettiCan_Opened', 'SparkPlug', 'SpearBone', 'SpearStone', 'Splint', 'Splint_Applied', 'SportGlasses_Black',
+                'SportGlasses_Blue', 'SportGlasses_Green', 'SportGlasses_Orange', 'Spotlight', 'Ssh68Helmet', 'StarlightOptic', 'StartKitIV', 'SteakKnife', 'Stone',
+                'StoneKnife', 'SurgicalGloves_Blue', 'SurgicalGloves_Green', 'SurgicalGloves_LightBlue', 'SurgicalGloves_White', 'SurgicalMask', 'Sweater_Blue',
+                'Sweater_Gray', 'Sweater_Green', 'Sweater_Red', 'Sword', 'TLRLight', 'TShirt_Beige', 'TShirt_Black', 'TShirt_Blue', 'TShirt_Green', 'TShirt_Grey',
+                'TShirt_OrangeWhiteStripes', 'TShirt_Red', 'TShirt_RedBlackStripes', 'TShirt_White', 'TTSKOBoots', 'TTSKOPants', 'TTsKOJacket_Camo',
+                'TacticalBaconCan', 'TacticalBaconCan_Opened', 'TacticalGloves_Beige', 'TacticalGloves_Black', 'TacticalGloves_Green', 'TacticalGoggles',
+                'TacticalShirt_Black', 'TacticalShirt_Grey', 'TacticalShirt_Olive', 'TacticalShirt_Tan', 'TaloonBag_Blue', 'TaloonBag_Green', 'TaloonBag_Orange',
+                'TaloonBag_Violet', 'TankerHelmet', 'TannedLeather', 'TelnyashkaShirt', 'TerritoryFlag', 'TerritoryFlagKit', 'TetracyclineAntibiotics',
+                'Thermometer', 'ThickFramesGlasses', 'ThinFramesGlasses', 'TireRepairKit', 'Tomato', 'TomatoSeeds', 'TomatoSeedsPack', 'Torch',
+                'TorsoCover_Improvised', 'TortillaBag', 'TrackSuitJacket_Black', 'TrackSuitJacket_Blue', 'TrackSuitJacket_Green', 'TrackSuitJacket_LightBlue',
+                'TrackSuitJacket_Red', 'TrackSuitPants_Black', 'TrackSuitPants_Blue', 'TrackSuitPants_Green', 'TrackSuitPants_LightBlue', 'TrackSuitPants_Red',
+                'Tripod', 'TripwireTrap', 'TruckBattery', 'Truck_01_Covered', 'Truck_01_Covered_Blue', 'Truck_01_Covered_Orange', 'Truck_01_Door_1_1',
+                'Truck_01_Door_1_1_Blue', 'Truck_01_Door_1_1_BlueRust', 'Truck_01_Door_1_1_GreenRust', 'Truck_01_Door_1_1_Orange', 'Truck_01_Door_1_1_OrangeRust',
+                'Truck_01_Door_2_1', 'Truck_01_Door_2_1_Blue', 'Truck_01_Door_2_1_BlueRust', 'Truck_01_Door_2_1_GreenRust', 'Truck_01_Door_2_1_Orange',
+                'Truck_01_Door_2_1_OrangeRust', 'Truck_01_Hood', 'Truck_01_Hood_Blue', 'Truck_01_Hood_BlueRust', 'Truck_01_Hood_GreenRust', 'Truck_01_Hood_Orange',
+                'Truck_01_Hood_OrangeRust', 'Truck_01_Wheel', 'Truck_01_Wheel_Ruined', 'Truck_01_Wheel_Ruined', 'Tshirt_Beige', 'Tshirt_Black', 'Tshirt_Blue', 'Tshirt_Green', 'Tshirt_Grey',
+                'Tshirt_OrangeWhiteStripes', 'Tshirt_Red', 'Tshirt_RedBlackStripes', 'Tshirt_White', 'TunaCan', 'TunaCan_Opened', 'UKAssVest_Black', 'UKAssVest_Camo',
+                'UKAssVest_Green', 'USG45', 'USG45_FoldingBttstck', 'V3S_Door_1_1', 'V3S_Door_1_2', 'V3S_Door_2_1', 'V3S_Door_2_2', 'V3S_Hood', 'V3S_Hood_BlueRust',
+                'V3S_Hood_OrangeRust', 'V3S_Wheel', 'V3S_Wheel_Ruined', 'V3S_White', 'V3S_WinterCamo', 'Val', 'VityazSN', 'Vityaz_Bttstck', 'VitaminBottle',
+                'VNPAntidote', 'VNPPainkiller', 'VNPPainkiller_Used', 'VSS', 'WalkieTalkie', 'WarmthBottle', 'WaterBottle', 'WaterBottle_Used', 'WaterPouch_ColorBase',
+                'WaterPouch_Improvised', 'WaterproofBag_Blue', 'WaterproofBag_Green', 'WaterproofBag_Orange', 'WaterproofBag_Yellow', 'WeaponCleaningKit',
+                'Wellies_Brown', 'Wellies_Grey', 'Wellies_Orange', 'Wellies_Yellow', 'Whistle', 'Whetstone', 'WildboarPelt', 'WildboarSteakMeat', 'WolfPelt',
+                'WolfSteakMeat', 'WoolCoat_Beige', 'WoolCoat_Black', 'WoolCoat_Brown', 'WoolCoat_CheckBeige', 'WoolCoat_CheckBlack', 'WoolCoat_CheckBlue',
+                'WoolCoat_CheckBrown', 'WoolCoat_CheckDarkBlue', 'WoolCoat_CheckGreen', 'WoolCoat_CheckGrey', 'WoolCoat_CheckRed', 'WoolCoat_CheckViolet',
+                'WoolCoat_Green', 'WoolCoat_Grey', 'WoolCoat_Red', 'WoolCoat_Violet', 'WoodAxe', 'WoodenCrate', 'WoodenLog', 'WoodenPlank', 'WoolDress_Beige',
+                'WoolDress_Brown', 'WoolDress_Green', 'WoolDress_Grey', 'WoolDress_Red', 'WoolDress_Violet', 'WoolGreatCoat_Beige', 'WoolGreatCoat_Black',
+                'WoolGreatCoat_Brown', 'WoolGreatCoat_Green', 'WoolGreatCoat_Grey', 'WoolGreatCoat_Red', 'WoolGreatCoat_Violet', 'WoolShirt_Beige', 'WoolShirt_Brown',
+                'WoolShirt_Green', 'WoolShirt_Grey', 'WoolShirt_Red', 'WoolShirt_Violet', 'WorkingGloves_Beige', 'WorkingGloves_Black', 'WorkingGloves_Brown',
+                'WorkingGloves_Yellow', 'WornTrainers_Black', 'WornTrainers_Blue', 'WornTrainers_Brown', 'WornTrainers_Green', 'WornTrainers_Red', 'ZSh3PilotHelmet'
+            ];
+            const itemsSelect = document.getElementById('item-select');
+            const attachmentsSelect = document.getElementById('attachment-select');
+
+            // Populate the dropdowns
+            types.forEach(type => {
+                const itemOption = document.createElement('option');
+                itemOption.value = type;
+                itemOption.text = type;
+                itemsSelect.appendChild(itemOption);
+
+                const attachmentOption = document.createElement('option');
+                attachmentOption.value = type;
+                attachmentOption.text = type;
+                attachmentsSelect.appendChild(attachmentOption);
+            });
+
+            // Log to ensure options are added
+            console.log("Items added to dropdown:", itemsSelect.options.length);
+            console.log("Attachments added to dropdown:", attachmentsSelect.options.length);
+
+            const items = [];
+
+            document.getElementById('add-item').addEventListener('click', () => {
+                const selectedItem = itemsSelect.value;
+                const selectedAttachment = attachmentsSelect.value;
+                const price = parseFloat(document.getElementById('price-input').value);
+                const inStock = parseInt(document.getElementById('stock-input').value);
+
+                let item = items.find(item => item.name === selectedItem);
+                if (!item) {
+                    item = { name: selectedItem, attachments: [], inStock: inStock, price: price };
+                    items.push(item);
+                } else {
+                    item.inStock = inStock;
+                    item.price = price;
+                }
+                item.attachments.push(selectedAttachment);
+
+                updateOutput();
+            });
+
+            document.getElementById('generate-file').addEventListener('click', () => {
+                const jsonOutput = JSON.stringify({ items }, null, 4);
+                const blob = new Blob([jsonOutput], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'shopItems.json';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            });
+
+            document.getElementById('generate-shop-file').addEventListener('click', () => {
+                const xmlFile = document.getElementById('xml-upload').files[0];
+                if (!xmlFile) {
+                    alert('Please upload a cfgspawnabletypes.xml file.');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(event.target.result, "text/xml");
+
+                    const spawnableTypes = xmlDoc.getElementsByTagName('type');
+                    const items = [];
+                    
+                    for (let i = 0; i < spawnableTypes.length; i++) {
+                        const typeNode = spawnableTypes[i];
+                        const name = typeNode.getAttribute('name');
+                        const attachments = [];
+                        
+                        const attachmentNodes = typeNode.getElementsByTagName('item');
+                        for (let j = 0; j < attachmentNodes.length; j++) {
+                            attachments.push(attachmentNodes[j].getAttribute('name'));
+                        }
+
+                        items.push({ name, attachments, inStock: 0, price: 0 });
+                    }
+
+                    const jsonOutput = JSON.stringify({ items }, null, 4);
+                    const blob = new Blob([jsonOutput], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'shopItems.json';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+
+                    document.getElementById('output').textContent = jsonOutput;
+                };
+                reader.readAsText(xmlFile);
+            });
+
+            function updateOutput() {
+                const jsonOutput = JSON.stringify({ items }, null, 4);
+                document.getElementById('output').textContent = jsonOutput;
+            }
+        });
+    </script>
+</body>
+</html>

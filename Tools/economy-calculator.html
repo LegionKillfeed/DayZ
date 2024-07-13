@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Legion Killfeed Commands</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+<link rel="stylesheet" href="./static/style.css">
+<link rel="icon" type="image/x-icon" href="./static/favicon.ico">
+
+<!-- OpenGraph Meta Tags -->
+<meta property="og:title" content="🎛️ Commands & Usage">
+<meta property="og:image" content="https://legionkillfeed.github.io/static/Legion.png">
+<meta property="og:url" content="https://legionkillfeed.github.io/commands">
+<meta property="og:type" content="website">
+<meta property="og:image:alt" content="Legion Killfeed Logo">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:width" content="256">
+<meta property="og:image:height" content="256">
+<meta name="theme-color" content="#ba9849">
+
+<!-- oEmbed Link -->
+<link type="application/json+oembed" href="https://legionkillfeed.github.io/static/discord_embed.json" />
+
+<meta name="title" content="Legion Killfeed for DayZ">
+<meta name="description" content="Commands & Usage">
+<meta name="keywords"
+	content="Legion Killfeed, killfeed, commands, discord bot, dayz bot, dayz tools, dayzOffline, dayz community, dayz killfeed, dayzkillfeed.com, skynet killfeed, dayz++, Legion DayZ, Legion DayZ Killfeed, skynet, dayz, official, official dayz">
+<meta name="robots" content="index, follow">
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": "Website",
+	"name": "Legion Killfeed for DayZ",
+	"url": "https://legionkillfeed.github.io/commands",
+	"potentialAction": {
+		"@type": "SearchAction",
+		"target": "https://legionkillfeed.github.io/search?q={search_term_string}",
+		"query-input": "required name=search_term_string"
+	},
+	"image": "https://legionkillfeed.github.io/static/Legion.png",
+	"description": "Commands & Usage",
+	"publisher": {
+		"@type": "Organization",
+		"name": "Legion Killfeed for DayZ",
+		"logo": {
+			"@type": "ImageObject",
+			"url": "https://legionkillfeed.github.io/static/Legion.png"
+		}
+	}
+}
+</script>
+<style>
+* {
+	box-sizing: border-box;
+	color: #B8A66A;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #B8A66A;
+}
+
+body {
+	background: linear-gradient(90deg, #ffe2ab, #525252, #ffe2ab, #1f1f1f, #ffe2ab, #272727);
+	background-size: 300% 300%;
+	animation: gradient 25s ease infinite;
+}
+
+#searchInput {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid #cea244;
+	background: #000000;
+	color: #dfb15b;
+}
+.more-info {
+	display: none;
+}
+.expandable {
+	cursor: pointer;
+	color: rgb(216, 162, 86);
+	text-decoration: underline;
+}
+
+.section {
+	margin-bottom: 20px;
+	background: #221f1f;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(226, 174, 106, 0.767);
+}
+
+.section p {
+	margin: 10px 0;
+	background: #000000;
+	color: #cab469;
+}
+
+.section ul {
+	list-style-type: none;
+	background: #141010;
+	color: #b39867;
+	padding: 0;
+}
+.section ul li {
+	background: #000000;
+	color: #cab469;
+	padding: 10px;
+	margin: 5px 0;
+	border-radius: 5px;
+}
+
+.section ul li a {
+	color: rgb(221, 176, 125);
+}
+
+/* Style the side navigation */
+.sidenav {
+	height: 100%;
+	width: 200px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: -200px; /* Initially hidden */
+	background-color: #000000;
+	color: #d1af64;
+	overflow-x: hidden;
+	transition: 0.3s; /* Smooth transition */
+}
+
+.sidenav.show {
+	left: 0; /* Show the sidebar */
+}
+
+/* Side navigation links */
+.sidenav a {
+	color: #F7DA87;
+	background-color: #000000;
+	padding: 8px;
+	text-decoration: none;
+	display: block;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+	background: linear-gradient(90deg, #ffe2ab, #bebebe, #ffe2ab, #443f3f, #ffe2ab, #666565);
+	background-size: 300% 300%;
+	color: #0c0b0a;
+	animation: gradient 25s ease infinite;
+}
+
+/* Style the content */
+.content {
+	margin-left: 200px;
+	padding-left: 20px;
+}
+
+button {
+	color: #dfa833;
+}
+
+.sidenav .logo {
+	display: flex;
+	align-items: center;
+}
+
+.sidenav .logo img {
+	width: 100%;
+	height: auto;
+	max-width: 35px;
+	margin-right: 10px;
+}
+
+.toggle-button {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	background-color: #000000;
+	color: #F7DA87;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	border-radius: 5px;
+	z-index: 2; /* Ensure it is above other elements */
+}
+
+.toggle-button .material-icons-sharp {
+	font-size: 24px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* Media Queries for Mobile Devices */
+@media screen and (max-width: 600px) {
+	.sidenav {
+		width: 100%;
+		height: auto;
+		position: relative;
+	}
+	.sidenav a {
+		float: left;
+		padding: 15px;
+	}
+	.sidenav a:hover {
+		color: #f1f1f1;
+	}
+	.content {
+		margin-left: 0;
+		padding-left: 0;
+	}
+	.generate-form label, .multiplier-form label {
+		display: block;
+		margin-bottom: 5px;
+	}
+	.generate-form .input-box, .multiplier-form .input-box {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.generate-form .submit, .multiplier-form .submit {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.generate-form select, .multiplier-form select {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.section ul li {
+		padding: 8px;
+		font-size: 14px;
+	}
+}
+</style>
+<script>
+function toggleInfo(container) {
+	var info = container.nextElementSibling;
+	if (info.style.display === "none" || info.style.display === "") {
+		info.style.display = "block";
+	} else {
+		info.style.display = "none";
+	}
+}
+</script>
+</head>
+<body>
+
+<button id="toggle-sidebar" class="toggle-button">
+	<span class="material-icons-sharp">menu</span>
+</button>
+<div class="sidenav">
+	<a href="https://legionkillfeed.github.io/home">
+		<div class="logo">
+			<img alt="Legion-Shield" src="https://legionkillfeed.github.io/static/Legion.png"/>
+			<h4><span class="logotext">Legion Killfeed</span></h4>
+		</div>
+	</a>
+	<a href="https://legionkillfeed.github.io/commands"><span class="material-icons-sharp">apps</span>Commands & Usage</a>
+	<a href="https://legionkillfeed.github.io/Tools/economy-calculator"><span class="material-icons-sharp">calculate</span>Economy Calculator</a>
+	<a href="https://legionkillfeed.github.io/Tools/trader-pricing"><span class="material-icons-sharp">note_add</span>Shoppi Pricing Tool</a>
+	<a href="https://legionkillfeed.github.io/Terms-of-Service"><span class="material-icons-sharp">policy</span>Terms of Service</a>
+	<a href="https://legionkillfeed.github.io/Privacy-Policy"><span class="material-icons-sharp">security</span>Privacy Policy</a>
+	<a href="https://business.gov.au/planning/protect-your-brand-idea-or-creation/copyright"><span class="material-icons-sharp">copyright</span>Copyright 2024</a>
+	<a href="https://ko-fi.com/LegionKillfeed"><span class="material-icons-sharp">subscriptions</span>Subscribe/Pricing</a>
+	<a href="https://discord.gg/LegionKillfeed"><span class="material-icons-sharp">forum</span>Discord</a>
+</div>
+<div class="content">
+
+<div class="container">
+	<div class="section">
+		<input type="text" id="searchInput" onkeyup="searchCommands()" placeholder="Search for commands...">
+		<h2>Settings Commands</h2>
+		<ul id="commandsSection">
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/setup token ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Adds a token for a server</li>
+				<li>(Token user only)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/setup channels ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Auto-setup common channels & their perms for a server</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/logs autofeed ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Assign a channel to auto download logfiles every 4 hours.</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/settings view ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>View the settings for your server</li>
+				<li>(Moderator/Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/settings rename ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Rename the server in the killfeed</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/settings flag_logs on/off ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Send to a separate logs channel</li>
+				<li><strong>Dropdown option: Flag Fires ⮧</strong></li>
+				<li>Separate fireplace placements</li>
+				<li><strong>Dropdown option: Flag Flags ⮧</strong></li>
+				<li>Separate flag raises & lowers</li>
+				<li><strong>Dropdown option: Flag Gardens ⮧</strong></li>
+				<li>Separate garden plot placements</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/settings locations on/off ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Turn locations on/off in Killfeed & PVE feed</li>
+				<li>Spolier: Hide coords behind discord spoiler || Perfect for screenshotting ||</li>
+				<li>Near: Show "Near Town" instead of coordinates - On/Off/Build Near (Show "Built/Dismanlted Near
+					Town")</li>
+				<li>iZurvive: Link "Near" or Coords to iZurvive - On/Off</li>
+				<li>Connectz: Show locations on connection logs - On/Off</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/reset stats player ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Reset a player's stats</li>
+				<li>Cancel Button: Cancels wiping a players stats.</li>
+				<li>Wipe Button: Wipes a players stats.</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/reset stats server ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Reset a server stats</li>
+				<li>Cancel Button: Cancels wiping server stats.</li>
+				<li>Wipe Button: Wipes server stats.</li>
+				<li>(Owner or Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/settings channels create ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Add a channel manually to avoid bulk channel setup</li>
+				<li>Channel: Killfeed, PVE Feed, Build Feed, Flag Logs, Connections, Leaderboards, Players Online,
+					Feeds, Bot Logs, Economy, Bounty, Heatmap Locations, Heatmap Kills, Heatmap Damages</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/settings admin roles ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Add/Remove role perms in the database.</li>
+				<li>The_Role: @Role (Don't @Role if removing)</li>
+				<li>Switch: Add/Remove</li>
+				<li>Permissions: Owner, Admin, Moderator, Restarter, Whitelister</li>
+				<li>(Requires discord manage role permissions)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/base damage ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Base On = allow bases to take damage</li>
+				<li>Base Off = prevent bases from taking damage</li>
+				<li>Container On = allow containers to take damage</li>
+				<li>Container Off = prevent containers from taking damage</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+		</ul>
+	</div>
+	<div class="section">
+		<h2>Base Radar Commands</h2>
+		<ul id="commandsSection">
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/base radar add ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Create a base radar of maximum 999metres</li>
+				<li>X Coord: XXXX (First coord in coords from Logs or iZurvive, not GPS)</li>
+				<li>Z Coord: ZZZZ (Second coord in coords from Logs or iZurvive, not GPS)</li>
+				<li>Radius: 999metres Maximum</li>
+				<li>Zone Name: Whatever you want, usually faction names</li>
+				<li>Zone Owner: Whoever is in charge of radar (They can self manage base ignore list), if it's for
+					the server not a player/faction, I usually set myself</li>
+				<li>Zone Channel: Channel to assign it to or leave empty to make one</li>
+				<li>Zone Role: Role for people to have access to the channel (Faction role usually) or leave empty
+					to make one</li>
+				<li>Ban Build: Auto-ban on build</li>
+				<li>Ban Kill: Auto-ban on kill</li>
+				<li>Ban Death: Auto-ban on death</li>
+				<li>Ban Entry: Auto-ban on entry</li>
+				<li>Ban Disconnect: Auto-ban on logout/disconnect</li>
+				<li>Base Location: Turn locations on/off in radar channel</li>
+				<li>Base Ping: Ping faction role/channel role on base radar notifications</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/base radar edit ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Edit an existing base radar.</li>
+				<li>Zone ID: Number from footer of base radars, no letters.</li>
+				<li>X Coord: XXXX (First coord in coords from Logs or iZurvive, not GPS)</li>
+				<li>Z Coord: ZZZZ (Second coord in coords from Logs or iZurvive, not GPS)</li>
+				<li>Radius: 999metres Maximum.</li>
+				<li>Zone Name: Whatever you want, usually faction names.</li>
+				<li>Zone Channel: Add to create, edit to assign existing</li>
+				<li>Existing Channel: Existing channel to assign if not assigning, leave blank.</li>
+				<li>Zone Owner: Whoever is in charge of radar (They can self manage base ignore list), if it's for
+					the server not a player/faction, I usually set myself.</li>
+				<li>Zone Role: Role for people to have access to the channel (Faction role usually) or leave empty
+					to make one.</li>
+				<li>Ban Build: Auto-ban on build.</li>
+				<li>Ban Kill: Auto-ban on kill.</li>
+				<li>Ban Death: Auto-ban on death.</li>
+				<li>Ban Entry: Auto-ban on entry.</li>
+				<li>Ban Disconnect: Auto-ban on logout/disconnect.</li>
+				<li>Base Location: Turn locations on/off in radar channel.</li>
+				<li>Base Ping: Ping faction role/channel role on base radar notifications.</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/base radar delete ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Delete a base radar</li>
+				<li>Zone ID: Number from footer of base radars, no letters.</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/base radar list ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Get list of a base radars.</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/base ignore add ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Add gamertag/gamertags to base radar ignore.</li>
+				<li>Must be base owner (or Moderator/Admin/Owner/Founder)</li>
+				<li>Must be used in radar channel - will not work outside channel.</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/base ignore remove ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Remove gamertag/gamertags from base radar ignore</li>
+				<li>Must be base owner (or Moderator/Admin/Owner/Founder)</li>
+				<li>Must be used in radar channel - will not work outside channel.</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/base ignore info ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Lists base radar details</li>
+				<li>Lists base ignore list too</li>
+				<li>Must be base owner (or Moderator/Admin/Owner/Founder)</li>
+				<li>Must be used in radar channel - will not work outside channel.</li>
+			</ul>
+		</ul>
+	</div>
+	<div class="section">
+		<h2>Nitrado Webinterface Commands</h2>
+		<ul id="commandsSection">
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/webinterface download folder: ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Download any file on your Nitrado.net gameserver via discord.</li>
+				<li>Select folder to search for files & download.</li>
+				<li>(Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/webinterface upload file: folder: ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Upload any file on your Nitrado.net gameserver via discord.</li>
+				<li>Select folder to upload files to.</li>
+				<li>(Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/webinterface update setting: ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Update settings on your Nitrado.net gameserver via discord.</li>
+				<li>Enables/Disables: players online logging, building logging, placements, mouse and keyboard,
+					whitelisting, container damage (not json), base damage (not json), gameplay file, crosshair,
+					third person perspective, alt_detection, shot_validation</li>
+				<li>(Owner/Founder)</li>
+			</ul>
+		</ul>
+	</div>
+	<div class="section">
+		<h2>Admin Commands</h2>
+		<ul id="commandsSection">
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/add ban ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Ban a gamertag/gamertags</li>
+				<li>Use , as a separator to ban multiple in one command</li>
+				<li>(Moderator/Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/remove ban ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Unban a gamertag/gamertags</li>
+				<li>Use , as a separator to unban multiple in one command</li>
+				<li>(Moderator/Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/view bans ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>View Banlist</li>
+				<li>(Moderator/Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/add whitelist ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Whitelist a gamertag/gamertags</li>
+				<li>Use , as a separator to whitelist multiple in one command</li>
+				<li>(Whitelister or Higher)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/remove whitelist ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Unwhitelist a gamertag/gamertags</li>
+				<li>Use , as a separator to unwhitelist multiple in one command</li>
+				<li>(Whitelister or Higher)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/view whitelist ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>View Whitelist</li>
+				<li>(Whitelister or Higher)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/add info_whitelist ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Check a discord account age before whitelisting them</li>
+				<li>(Moderator/Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/add priority ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Prioritize a gamertag/gamertags</li>
+				<li>Use , as a separator to prioritize multiple in one command</li>
+				<li>(Moderator/Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/remove priority ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Unprioritize a gamertag/gamertags</li>
+				<li>Use , as a separator to unprioritize multiple in one command</li>
+				<li>(Moderator/Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/view priority ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>View priority list</li>
+				<li>(Moderator/Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/admin search ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Search for player information</li>
+				<li>Including whether whitelisted/banned/prioritized and by who & when</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/admin plocs ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>View current online players and their locations</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/admin force link ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Force link a user to a gamertag</li>
+				<li>Member: @USER</li>
+				<li>Gamertag: GAMERTAG/InGameName</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/admin force unlink ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Force unlink a user from a gamertag</li>
+				<li>Member: @USER</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/logs download current ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Download the currently in use logfile.</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/logs download all ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Download all .ADM logfiles on your server.</li>
+				<li>(Admin/Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/status ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Display server status</li>
+				<li>Display Nitrado dashboard config</li>
+				<li>Display base damage schedule</li>
+				<li>Display messages processed</li>
+				<li>Display partial last line processed</li>
+				<li>(Restarter or Higher)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/heatmaps ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Locations = heatmap for player locations in last hour</li>
+				<li>Kills = heatmap for kills in last hour</li>
+				<li>Damage = heatmap for PVP damage in last hour</li>
+				<li>(Moderator/Admin/Owner/Founder)</li>
+			</ul>
+		</ul>
+	</div>
+	<div class="section">
+		<h2>Experimental Commands</h2>
+		<ul id="commandsSection">
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/types server boost ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Boost your types file by 'x' amount</li>
+				<li>(Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/types local edit ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Bulk edit local types file by 'category', 'tag', 'usage' or 'value'</li>
+				<li>(Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/types local validate ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Upload a local types file to validate</li>
+				<li>(Owner/Founder)</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/admin spawner ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Build an event from discord</li>
+				<li>Selection: Items/Static/Vehicle</li>
+				<li>X Coord: XXXX (First coord in coords from Logs or iZurvive, not GPS)</li>
+				<li>Z Coord: ZZZZ (Second coord in coords from Logs or iZurvive, not GPS)</li>
+				<li>Type Name: Item/Object/Vehicle name from types.xml</li>
+				<li>Lifetime: How long the item stays spawned for in seconds (permanent spawn set to 3888000)</li>
+				<li>Player Name: Name to reference event in files (whatever you want, but no spaces)</li>
+				<li>Nominal: How many to spawn at location</li>
+				<li>Max Amount: Maximum items to spawn at location</li>
+				<li>Min Amount: Minimum items to spawn at location</li>
+				<li>Restock: Seconds to wait before respawning item (usually 0)</li>
+				<li>(Owner/Admin/Founder)</li>
+			</ul>
+		</ul>
+	</div>
+	<div class="section">
+		<h2>Player Commands</h2>
+		<ul id="commandsSection">
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/bounty add ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Add bounty to player.</li>
+				<li>Gamertag: @linkedUser or Gamertag/IGN</li>
+				<li>Amount: 100 or 100.00 or 101.01 (but no extra symbols or letters).</li>
+				<li>Must be used in economy channel - will not work outside channel.</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/bounty view ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>View active bounties for server</li>
+				<li>Must be used in economy channel - will not work outside channel.</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/bounty pay ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Pay to remove yours or a members bounty</li>
+				<li>Must be used in economy channel - will not work outside channel.</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/leaderboard ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Server leaderboards</li>
+				<li>Boards: Kills, Best Streaks, Score, PVP KD, PVP Deaths, Worst Deathstreak, Headshots</li>
+				<li>Time Alive: Day/Week/Month</li>
+				<li>Kills: Today/This Week/This Month</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/global ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Global Leaderboards</li>
+				<li>Options: Score, Kills, PVP KD, Headshots, Distance, PVP Deaths, Killstreaks, Deathstreaks,
+					Server with Most Kills, Server with Most Players</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/info ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Bot & Developer Information</li>
+				<li>Default Economy Information</li>
+				<li>Scoring Math Information</li>
+				<li>Scoring Math Information</li>
+				<li>Rank Information</li>
+				<li>Roast Contributions</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/unlink ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Unlinks your account</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/link ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Links your discord to a gamertag, once you're linked, you're linked globally unless you unlink
+				</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/stats ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Check server or global stats for a gamertag</li>
+				<li>Options: Linked Member (Leave Blank), @Member or Gamertag/IGN</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/mine ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Check server or global stats for yourself</li>
+				<li>Self only & must be linked</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+				<strong>/plon ⮧</strong>
+			</div>
+			<ul class="more-info">
+				<li>Check players online for current server</li>
+				<li>Only works if players online & /plon is enabled</li>
+			</ul>
+			<div class="expandable" onclick="toggleInfo(this)">
+					<strong>/godmode ⮧</strong>
+				</div>
+				<ul class="more-info">
+					<li>Fake godmode command to troll people</li>
+					<li>Member: @Member you're trolling</li>
+				</ul>
+				<div class="expandable" onclick="toggleInfo(this)">
+					<strong>/bug ⮧</strong>
+				</div>
+				<ul class="more-info">
+					<li>Do this command if you notice inconsistencies in the killfeed/logs.</li>
+					<li>Go into detail with it otherwise we won't bother with it.</li>
+					<li>Wait 5mins after issue to ensure logs catch it all.</li>
+				</ul>
+			</ul>
+		</div>
+	</div>
+	<script>
+		function searchCommands() {
+			let input = document.getElementById('searchInput');
+			let filter = input.value.toLowerCase();
+			let sections = document.querySelectorAll('.section ul li');
+
+			sections.forEach(function (item) {
+				let text = item.textContent || item.innerText;
+				if (text.toLowerCase().indexOf(filter) > -1) {
+					item.style.display = "";
+				} else {
+					item.style.display = "none";
+				}
+			});
+		}
+		document.addEventListener("DOMContentLoaded", function() {
+			const sidebar = document.querySelector('.sidenav');
+			const toggleButton = document.getElementById('toggle-sidebar');
+
+			toggleButton.addEventListener('click', function() {
+				sidebar.classList.toggle('show');
+			});
+		});
+	</script>
+</body>
+</html>
