@@ -1,0 +1,13 @@
+title: Legion Killfeed
+description: DayZ Killfeed Discord Bot
+show_downloads: false
+permalink: pretty
+
+url: https://bymrsoul.github.io/legion
+
+plugins:
+  - jekyll-oembed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+theme: jekyll-theme-minimal

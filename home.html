@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Legion Killfeed</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+	<link rel="stylesheet" href="./static/style.css">
+	<link rel="icon" type="image/x-icon" href="./static/favicon.ico">
+		
+	<!-- OpenGraph Meta Tags -->
+	<meta property="og:title" content="ⓘ Learn more!">
+	<meta property="og:image" content="https://bymrsoul.github.io/legion/static/Legion.png">
+	<meta property="og:url" content="https://bymrsoul.github.io/legion/">
+	<meta property="og:type" content="website">
+	<meta property="og:image:alt" content="Legion Killfeed Logo">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:image:width" content="256">
+	<meta property="og:image:height" content="256">
+	<meta property="og:description" content="👑 Admin tools
+👁️ Visual Feeds
+🖼️ Customisable Settings
+🏦 Economy & Gambling
+🗺️ Heatmaps
+📡 Base Radars
+➕ More">
+	<meta name="theme-color" content="#ba9849">
+	
+	<!-- oEmbed Link -->
+	<link type="application/json+oembed" href="https://bymrsoul.github.io/legion/static/discord_embed.json" />
+
+	<!-- Basic Meta Tags -->
+	<meta name="title" content="Legion Killfeed for DayZ">
+	<meta name="description" content="👑 Admin tools
+		👁️ Visual Feeds
+		🖼️ Customisable Settings
+		🏦 Economy & Gambling
+		🗺️ Heatmaps
+		📡 Base Radars
+		➕ More">
+	<meta name="keywords"
+		content="Legion Killfeed, killfeed, commands, discord bot, dayz bot, dayz tools, dayzOffline, dayz community, dayz killfeed, dayzkillfeed.com, skynet killfeed, dayz++, Legion DayZ, Legion DayZ Killfeed, skynet, dayz, official, official dayz">
+	<meta name="robots" content="index, follow">
+	
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Website",
+		"name": "Legion Killfeed for DayZ",
+		"url": "https://bymrsoul.github.io/legion/",
+		"potentialAction": {
+			"@type": "SearchAction",
+			"target": "https://bymrsoul.github.io/legion/search?q={search_term_string}",
+			"query-input": "required name=search_term_string"
+		},
+		"image": "https://bymrsoul.github.io/legion/static/Legion.png",
+		"description": "👑 Admin tools
+			👁️ Visual Feeds
+			🖼️ Customisable Settings
+			🏦Economy & Gambling
+			🗺️ Heatmaps
+			📡 Base Radars
+			➕ More",
+		"publisher": {
+			"@type": "Organization",
+			"name": "Legion Killfeed for DayZ",
+			"logo": {
+				"@type": "ImageObject",
+				"url": "https://bymrsoul.github.io/legion/static/Legion.png"
+			}
+		}
+	}
+	</script>
+	<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		const sidebar = document.querySelector('.sidenav');
+		const toggleButton = document.getElementById('toggle-sidebar');
+
+		toggleButton.addEventListener('click', function() {
+			sidebar.classList.toggle('show');
+		});
+	});
+	</script>
+    <style>
+      * {
+        box-sizing: border-box;
+        color: #B8A66A;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #B8A66A;
+      }
+
+      body {
+        background: linear-gradient(90deg, #ffe2ab, #525252, #ffe2ab, #1f1f1f, #ffe2ab, #272727);
+        background-size: 300% 300%;
+        animation: gradient 25s ease infinite;
+      }
+
+      .section {
+        margin-bottom: 20px;
+        background: #221f1f;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(226, 174, 106, 0.767);
+      }
+
+      .section p {
+        margin: 10px 0;
+        background: #000000;
+        color: #cab469;
+      }
+
+      .section ul {
+        list-style-type: none;
+        background: #141010;
+        color: #e4ad47;
+        padding: 0;
+      }
+      .section ul li {
+        background: #000000;
+        color: #cab469;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+      }
+
+      .section ul li a {
+        color: rgb(221, 176, 125);
+      }
+
+      /* Style the side navigation */
+      .sidenav {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #000000;
+        color: #d1af64;
+        overflow-x: hidden;
+		transition: 0.5s; /* Added transition */
+      }
+
+
+      /* Side navigation links */
+      .sidenav a {
+        color: #F7DA87;
+        background-color: #000000;
+        padding: 12px;
+        text-decoration: none;
+        display: block;
+      }
+
+      /* Change color on hover */
+      .sidenav a:hover {
+        background: linear-gradient(90deg, #ffe2ab, #bebebe, #ffe2ab, #443f3f, #ffe2ab, #666565);
+        background-size: 300% 300%;
+        color: #0c0b0a;
+        animation: gradient 25s ease infinite;
+      }
+
+      /* Style the content */
+      .content {
+        margin-left: 200px;
+        padding-left: 20px;
+      }
+
+      .sidenav .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .sidenav .logo img {
+        width: 100%;
+        height: auto;
+        max-width: 50px;
+        margin-right: 10px;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+
+        50% {
+          background-position: 100% 50%;
+        }
+
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+/* Media Queries for Mobile Devices */
+@media screen and (max-width: 600px) {
+    .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidenav a {
+        float: left;
+        padding: 15px;
+    }
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+    .content {
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .generate-form label, .multiplier-form label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .generate-form .input-box, .multiplier-form .input-box {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .generate-form .submit, .multiplier-form .submit {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .generate-form select, .multiplier-form select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .section ul li {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+    </style>
+  <style>
+            /* Mobile friendly styles */
+            @media only screen and (max-width: 600px) {
+                body {
+                    font-size: 14px;
+                }
+                .sidenav {
+                    width: 100%;
+                    height: auto;
+                    position: relative;
+                }
+                .sidenav a {float: left;}
+                .content {margin-left: 0;}
+            }
+            @media only screen and (min-width: 600px) {
+                .sidenav {
+                    width: 200px;
+                    height: 100%;
+                    position: fixed;
+                }
+                .content {
+                    margin-left: 200px;
+                    padding-left: 20px;
+                }
+            }
+        </style>
+        </head>
+  <body>
+
+    <div class="sidenav">
+      <a href="https://bymrsoul.github.io/legion/home">
+        <div class="logo">
+          <img alt="Legion-Shield" src="https://bymrsoul.github.io/legion/static/Legion.png"/>
+          <h4><span class="logotext">Legion Killfeed</span></h4>
+        </div>
+      </a>
+	  <a href="https://bymrsoul.github.io/legion/commands"><span class="material-icons-sharp">apps</span>Commands & Usage</a>
+	  <a href="https://bymrsoul.github.io/legion/Tools/economy-calculator"><span class="material-icons-sharp">calculate</span>Economy Calculator</a>
+	  <a href="https://bymrsoul.github.io/legion/Tools/trader-pricing"><span class="material-icons-sharp">note_add</span>Shoppi Pricing Tool</a>
+	  <a href="https://bymrsoul.github.io/legion/Terms-of-Service"><span class="material-icons-sharp">policy</span>Terms of Service</a>
+	  <a href="https://bymrsoul.github.io/legion/Privacy-Policy"><span class="material-icons-sharp">security</span>Privacy Policy</a>
+	  <a href="https://business.gov.au/planning/protect-your-brand-idea-or-creation/copyright"><span class="material-icons-sharp">copyright</span>Copyright 2024</a>
+	  <a href="https://ko-fi.com/LegionKillfeed"><span class="material-icons-sharp">subscriptions</span>Subscribe/Pricing</a>
+	  <a href="https://discord.gg/LegionKillfeed"><span class="material-icons-sharp">forum</span>Discord</a>
+	</div>
+
+<div class="content">
+	<div class="container">
+		
+		<div class="section">
+			<h1>Home</h1>
+			<ul>Legion Killfeed listen to your ideas so we can provide features suited to your needs!</ul>
+		</div>
+
+		<div class="section">
+			<h2>💲 Cheap Pricing</h2>
+			<h3>Do <code>/subscribe</code> for pricing*</h3>
+			<ul>
+				<li>*subject to change</li>
+				<li><i>it locks in at the cheaper pricing until you unsubscribe</i></li>
+			</ul>
+		</div>
+		
+		<div class="section">
+			<h2>🏦 Economy & Gambling</h2>
+			<h3>Customizable multiplier, earn on kill, earn on build, trader coming soon</h3>
+		</div>
+		
+		<div class="section">
+			<h2>🗺️ Heatmaps</h2>
+			<h3>Auto-feed options for each one!</h3>
+			<h2>Heatmap Types</h2>
+			<ul>
+				<li> - PVP Damage</li>
+				<li> - Kills</li>
+				<li> - Location</li>
+				<li> - Ban on Entry</li>
+				<li> + Plus more</li>
+			</ul>
+		</div>
+
+		<div class="section">
+			<h2>👁️ Visual Killfeed & Buildfeed</h2>
+			<ul>
+				<li> - Where you shot displays in killfeed</li>
+				<li> - What you shot with displays in killfeed</li>
+				<li> - What part you built displays in build channel</li>
+				<li> - What you built in build channel</li>
+			</ul>
+		</div>
+
+		<div class="section">
+			<h2>🗃️ Timed Functions</h2><ul>
+				<li> - Auto download logs </li>
+				<li> - Automate base damage in any timezone </li>
+				<li> + More coming</li>
+			</ul>
+		</div>
+
+		<div class="section">
+			<h2>🖼️ Set server logo via URL</h2>
+			<ul>
+				<li> - Upload to <a href="https://imgbb.com">https://imgbb.com</a> for free then <code>/settings add logo</code></li>
+			</ul>
+		</div>
+
+		<div class="section">
+			<h2>👊 /fight</h2>
+			<ul>
+				<li>challenge another discord member to a fight</li>
+				<li>if they accept, one of them at random is timed out</li>
+				<li>anyone with admin perms in the discord & 2FA enabled is immune to timeouts</li>
+			</ul>
+		</div>
+
+		<div class="section">
+			<h2>👑 Assignable role levels</h2><ul>
+				<li> - Subscriber no roles needed (whoever runs <code>/setup token</code>)</li>
+				<li> - Founder/Owner</li>
+				<li> - Admin</li>
+				<li> - Moderator</li>
+				<li> - Restarter</li>
+				<li> - Whitelister</li>
+			</ul>
+		</div>
+	</div>
+    </div>
+</body>
+
+</html>
