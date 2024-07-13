@@ -263,6 +263,64 @@ b {
 
 }
 
+
+.sidenav {
+	height: 100%;
+	width: 200px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #000000;
+	color: #d1af64;
+	overflow-x: hidden;
+	transition: 0.5s; /* Added transition */
+  }
+  
+  .sidenav.show {
+	  left: 0; /* Show the sidebar */
+  }
+  
+  /* Side navigation links */
+  .sidenav a {
+	color: #F7DA87;
+	background-color: #000000;
+	padding: 8px;
+	text-decoration: none;
+	display: block;
+  }
+  
+  /* Change color on hover */
+  .sidenav a:hover {
+		background: linear-gradient(90deg, #ffe2ab, #bebebe, #ffe2ab, #443f3f, #ffe2ab, #666565);
+	  background-size: 300% 300%;
+	  color: #0c0b0a;
+	  animation: gradient 25s ease infinite;
+  }
+
+/* Style the content */
+.content {
+	margin-left: 200px;
+	padding-left: 20px;
+  }
+  
+	button {
+	  color: #dfa833;
+	}
+  
+	.sidenav .logo {
+	  display: flex;
+	  align-items: center;
+	}
+  
+	.sidenav .logo img {
+	  width: 100%;
+	  height: auto;
+	  max-width: 35px;
+	  margin-right: 10px;
+	}
+
+	
 main {
 	margin: 0;
 	padding: 0;
@@ -293,4 +351,43 @@ body {
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+@media screen and (max-width: 600px) {
+    .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidenav a {
+        float: left;
+        padding: 15px;
+    }
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+    .content {
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .generate-form label, .multiplier-form label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .generate-form .input-box, .multiplier-form .input-box {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .generate-form .submit, .multiplier-form .submit {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .generate-form select, .multiplier-form select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .section ul li {
+        padding: 8px;
+        font-size: 14px;
+    }
 }

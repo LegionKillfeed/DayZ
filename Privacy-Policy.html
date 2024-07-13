@@ -230,11 +230,17 @@ body {
                 }
             }
         </style>
-        </head>
-<body>
-
-<div class="sidenav">
-  <a href="https://legionkillfeed.github.io/DayZ/home">
+        <script>
+        function toggleMenu() {
+          var sidenav = document.querySelector(".sidenav");
+          sidenav.classList.toggle("show");
+        }
+        </script>
+      </head>
+      <body>
+      
+      <div class="sidenav">
+        <a href="https://legionkillfeed.github.io/DayZ/home">
   <div class="logo">
     <img alt="Legion-Shield" src="https://legionkillfeed.github.io/DayZ/static/Legion.png"/>
     <h4><span class="logotext">Legion Killfeed</span></h4>
