@@ -3,7 +3,7 @@ description: DayZ Killfeed Discord Bot
 show_downloads: false
 permalink: pretty
 
-url: https://legionkillfeed.github.io
+url: https://legionkillfeed.github.io/DayZ/
 
 plugins:
   - jekyll-oembed
