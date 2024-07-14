@@ -238,29 +238,29 @@
     </style>
     <style>
             /* Mobile friendly styles */
-            @media only screen and (max-width: 600px) {
-                body {
-                    font-size: 14px;
-                }
-                .sidenav {
-                    width: 100%;
-                    height: auto;
-                    position: relative;
-                }
-                .sidenav a {float: left;}
-                .content {margin-left: 0;}
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 14px;
             }
-            @media only screen and (min-width: 600px) {
-                .sidenav {
-                    width: 200px;
-                    height: 100%;
-                    position: fixed;
-                }
-                .content {
-                    margin-left: 200px;
-                    padding-left: 20px;
-                }
+            .sidenav {
+                width: 100%;
+                height: auto;
+                position: relative;
             }
+            .sidenav a {float: left;}
+            .content {margin-left: 0;}
+        }
+        @media only screen and (min-width: 600px) {
+            .sidenav {
+                width: 200px;
+                height: 100%;
+                position: fixed;
+            }
+            .content {
+                margin-left: 200px;
+                padding-left: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -284,15 +284,14 @@
     <div class="content">
         <div class="container">
             <div class="section">
-                <h1>Legion Killfeed for DayZ Console</h1>
-                <div class="section">
-                    <a href="https://legionkillfeed.github.io/DayZ/home" class="button">Home</a>
-                    <a href="https://legionkillfeed.github.io/DayZ/Tools/economy-calculator" class="button">Economy Multiplier Tool</a>
-                    <a href="https://legionkillfeed.github.io/DayZ/Tools/trader-pricing" class="button">Shoppi Pricing Tool</a>
-                    <a href="https://legionkillfeed.github.io/DayZ/commands" class="button">Commands</a>
-                    <a href="https://legionkillfeed.github.io/DayZ/Privacy-Policy" class="button">Privacy Policy</a>
-                    <a href="https://legionkillfeed.github.io/DayZ/Terms-of-Service" class="button">Terms of Service</a>
-                </div>
+                <h2>Legion Killfeed for DayZ Console</h2>
+
+                    <ul><a href="https://legionkillfeed.github.io/DayZ/home"><span class="material-icons-sharp">military_tech</span>
+                    <a href="https://legionkillfeed.github.io/DayZ/Tools/economy-calculator"><span class="material-icons-sharp">calculate</span></a>
+                    <a href="https://legionkillfeed.github.io/DayZ/Tools/trader-pricing"><span class="material-icons-sharp">note_add</span></a>
+                    <a href="https://legionkillfeed.github.io/DayZ/commands"><span class="material-icons-sharp">apps</span></a>
+                    <a href="https://legionkillfeed.github.io/DayZ/Privacy-Policy"><span class="material-icons-sharp">security</span></a>
+                    <a href="https://legionkillfeed.github.io/DayZ/Terms-of-Service"><span class="material-icons-sharp">policy</span></a>
             </div>
 
             <div class="section">
