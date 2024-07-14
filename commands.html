@@ -795,6 +795,17 @@ body {
 				}
 			});
 		}
+		
+        function toggleInfo(container) {
+            var info = container.nextElementSibling;
+            if (info.style.display === "none" || info.style.display === "") {
+                info.style.display = "block";
+            } else {
+                info.style.display = "none";
+            }
+        }
+
+		
 	</script>
 </body>
 </html>
