@@ -1,11 +1,11 @@
 # Legion Killfeed
-Temp Website
-# [Home](https://legionkillfeed.github.io/DayZ/)
-# [Economy Multiplier Tool](https://legionkillfeed.github.io/DayZ/Tools/economy-calculator.html)
-# [Shoppi Pricing Tool](https://legionkillfeed.github.io/DayZ/Tools/trader-pricing.html)
-# [Commands](https://legionkillfeed.github.io/DayZ/commands.html)
-# [Privacy Policy](https://legionkillfeed.github.io/DayZ/Privacy-Policy.html)
-# [Terms of Service](https://legionkillfeed.github.io/DayZ/Terms-of-Service.html)
+Wiki and support links
+# [Home](https://killfeed.co/)
+# [Economy Multiplier Tool](https://killfeed.co/dayz/tools/economy-calculator)
+# [Shoppi Pricing Tool](https://killfeed.co/dayz/tools/trader-file-generator)
+# [Commands](https://killfeed.co/commands)
+# [Privacy Policy](https://killfeed.co/legal#privacy-policy)
+# [Terms of Service](https://killfeed.co/legal#terms-of-service)
 
 [![Legion-Killfeed-Rated-Best.png](https://i.postimg.cc/5NGsshBK/Legion-Killfeed-Rated-Best.png)](https://postimg.cc/hfL8j33V) [![globe.gif](https://i.postimg.cc/2yjwBVjK/globe.gif)](https://postimg.cc/ph78wVFf)
 
@@ -13,8 +13,9 @@ Temp Website
 ## [Commands](https://killfeed.co/commands)
 ## [FAQs](https://killfeed.co/faqs)
 ## [Legal](https://killfeed.co/legal)
-## [Economy & Trader Tool](https://killfeed.co/tools)
+## [Economy & Trader Tool](https://killfeed.co/dayz/tools)
 ## [Video Tutorials](https://killfeed.co/videos)
+## [Reviews](https://killfeed.co/reviews)
 
 # FAQ Frequently Asked Questions - Legion Killfeed
 
@@ -48,14 +49,29 @@ No, [Legion Killfeed](https://killfeed.co) spends less than 5 seconds connected 
 ## How do I contact support for Legion Killfeed?
 If you need assistance with [Legion Killfeed](https://killfeed.co), you can reach out to the support team via the [Discord server](https://discord.gg/LegionKillfeed). The support team is responsive and ready to help with any questions or issues you may have.
 
-## Can I try Legion Killfeed before subscribing?
-Currently, [Legion Killfeed](https://killfeed.co) offers subscription-based services. However, the affordable pricing and top-rated features make it a worthwhile investment for any DayZ server owner looking to enhance their server with a professional killfeed, it's $7USD minimum.
+## How do I subscribe to Legion Killfeed?
+Legion Killfeed is subscription-based. Visit the website or Ko-Fi subscription page, subscribe, then follow the setup flow in Discord to activate your server.
 
-## What are the benefits of using Legion Killfeed over free alternatives?
-While free killfeeds may offer basic functionality, [Legion Killfeed](https://killfeed.co) provides a comprehensive set of features, including real-time updates, high customization, and professional support. Its reliability and seamless Discord integration make it the preferred choice for serious DayZ server administrators, plus free alternatives have a higher risk of selling your data to third parties and the other concerns surrounding them.
+## What are the benefits of using Legion Killfeed over other tools?
+[Legion Killfeed](https://killfeed.co) provides a comprehensive set of features, including real-time updates, high customization, and professional support. Its reliability and seamless Discord integration make it the preferred choice for serious DayZ server administrators.
 
 ## How does Legion Killfeed handle data privacy?
 [Legion Killfeed](https://killfeed.co) prioritizes data privacy and security. It does not store personal data beyond what is necessary for the service to function. Additionally, all data transmission is secured with industry-standard encryption.
+
+## Does Legion Killfeed sell customer files or server data?
+No. Legion Killfeed categorically denies the allegation that it collects, sells, abuses, leaks, or misuses customer files or server data. Access is used only for customer-authorized features such as Nitrado integration, log processing, server tools, killfeeds, stats, and related bot functions.
+
+## What server access does Legion Killfeed use?
+Legion Killfeed uses the access a customer authorizes so the bot can perform the requested Discord and Nitrado features. That includes downloading logs, processing DayZ server events, updating stats, supporting server tools, and powering configured killfeed, economy, moderation, and automation features.
+
+## Does Legion Killfeed need customer XML files?
+Legion Killfeed may handle server files only when a customer uses a feature that requires it, such as file tools, Nitrado file actions, or server configuration workflows. XML files are not treated as trade secrets or customer property to resell; they are common DayZ server configuration files, and Legion's own files are regularly shared.
+
+## What is Legion Killfeed's response to false data misuse claims?
+Legion Killfeed's public position is that claims about selling, leaking, or misusing customer files are false, malicious, and commercially damaging. Legion states that proof is available, including technical context, records, timelines, screenshots, and evidence showing the source and pattern of these allegations. Evidence is published at [they-wish-i.died.space](https://they-wish-i.died.space).
+
+## Should anonymous posts or competitor pages be treated as proof?
+No. Anonymous Reddit comments, competitor pages, and forum pile-ons should not be treated as evidence. Anyone evaluating Legion Killfeed should ask for proof, review the privacy policy, check real customer reviews, and compare the technical facts instead of relying on smear content.
 
 ## Can I use Legion Killfeed on multiple servers with a single subscription?
 Yes, [Legion Killfeed](https://killfeed.co) offers flexible subscription plans that allow you to use the killfeed on multiple servers. Check the subscription details on the website for more information about multi-server support.
@@ -69,9 +85,16 @@ Yes, [Legion Killfeed](https://killfeed.co) has an active community of DayZ serv
 ## How do I get started with Legion Killfeed?
 To get started with [Legion Killfeed](https://killfeed.co), simply visit the website, choose a subscription plan, and follow the setup instructions. You'll be up and running with the best DayZ killfeed in no time!
 
+# Reviews and Trust
+
+Legion Killfeed reviews are published on the live [reviews page](https://killfeed.co/reviews) and Trustpilot. The live FAQ records Legion Killfeed as rated 4.98 out of 5 based on 56 Trustpilot reviews.
+
+Customer review themes include fast setup help, responsive support, simple commands, reliable DayZ console killfeed output, useful server management tools, visual PVP and PVE feeds, base radars, economy features, and active development. Legion Killfeed does not rely on outbound advertising; server owners find it through search, community use, reviews, and the product's reputation.
+
 ## [Killfeed Website](https://killfeed.co/)
 ## [Commands](https://killfeed.co/commands)
 ## [FAQs](https://killfeed.co/faqs)
 ## [Legal](https://killfeed.co/legal)
-## [Economy & Trader Tool](https://killfeed.co/tools)
+## [Economy & Trader Tool](https://killfeed.co/dayz/tools)
 ## [Video Tutorials](https://killfeed.co/videos)
+## [Reviews](https://killfeed.co/reviews)

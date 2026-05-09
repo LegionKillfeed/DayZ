@@ -9,8 +9,8 @@
     
     <!-- OpenGraph Meta Tags -->
     <meta property="og:title" content="🎛️ Commands & Usage">
-    <meta property="og:image" content="https://legionkillfeed.github.io/DayZ/static/Legion.png">
-    <meta property="og:url" content="https://killfeed.co/commandss">
+    <meta property="og:image" content="https://killfeed.co/images/logo.webp">
+    <meta property="og:url" content="https://killfeed.co/commands">
     <meta property="og:type" content="website">
     <meta property="og:image:alt" content="Legion Killfeed Logo">
     <meta property="og:locale" content="en_US">
@@ -19,7 +19,7 @@
     <meta name="theme-color" content="#ba9849">
     
     <!-- oEmbed Link -->
-    <link type="application/json+oembed" href="https://legionkillfeed.github.io/DayZ/static/discord_embed.json" />
+    <link type="application/json+oembed" href="https://killfeed.co/assets/json/discord_embed.json" />
     
     <meta name="title" content="Legion Killfeed for DayZ">
     <meta name="description" content="Commands & Usage">
@@ -32,20 +32,20 @@
             "@context": "https://schema.org",
             "@type": "Website",
             "name": "Legion Killfeed for DayZ",
-            "url": "https://killfeed.co/commandss",
+            "url": "https://killfeed.co/commands",
             "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://legionkillfeed.github.io/DayZ/search?q={search_term_string}",
+                "target": "https://killfeed.co/dayz/search?q={search_term_string}",
                 "query-input": "required name=search_term_string"
             },
-            "image": "https://legionkillfeed.github.io/DayZ/static/Legion.png",
+            "image": "https://killfeed.co/images/logo.webp",
             "description": "Commands & Usage",
             "publisher": {
                 "@type": "Organization",
                 "name": "Legion Killfeed for DayZ",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://legionkillfeed.github.io/DayZ/static/Legion.png"
+                    "url": "https://killfeed.co/images/logo.webp"
                 }
             }
         }
@@ -231,15 +231,15 @@ body {
 <div class="sidenav">
   <a href="https://killfeed.co/">
   <div class="logo">
-    <img alt="Legion-Shield" src="https://legionkillfeed.github.io/DayZ/static/Legion.png"/>
+    <img alt="Legion-Shield" src="https://killfeed.co/images/logo.webp"/>
     <h4><span class="logotext">Legion Killfeed</span></h4>
   </div>
   </a>
-  <a href="https://killfeed.co/commandss"><span class="material-icons-sharp">apps</span>Commands & Usage</a>
-  <a href="https://killfeed.co/free-tools/economy-calculator"><span class="material-icons-sharp">calculate</span>Economy Calculator</a>
-  <a href="https://killfeed.co/free-tools/trader-file-generator"><span class="material-icons-sharp">note_add</span>Shoppi Pricing Tool</a>
-  <a href="https://killfeed.co/legal#terms"><span class="material-icons-sharp">policy</span>Terms of Service</a>
-  <a href="https://killfeed.co/legal#privacy"><span class="material-icons-sharp">security</span>Privacy Policy</a>
+  <a href="https://killfeed.co/commands"><span class="material-icons-sharp">apps</span>Commands & Usage</a>
+  <a href="https://killfeed.co/dayz/tools/economy-calculator"><span class="material-icons-sharp">calculate</span>Economy Calculator</a>
+  <a href="https://killfeed.co/dayz/tools/trader-file-generator"><span class="material-icons-sharp">note_add</span>Shoppi Pricing Tool</a>
+  <a href="https://killfeed.co/legal#terms-of-service"><span class="material-icons-sharp">policy</span>Terms of Service</a>
+  <a href="https://killfeed.co/legal#privacy-policy"><span class="material-icons-sharp">security</span>Privacy Policy</a>
   <a href="https://business.gov.au/planning/protect-your-brand-idea-or-creation/copyright"><span class="material-icons-sharp">copyright</span>Copyright 2024</a>
   <a href="https://ko-fi.com/LegionKillfeed"><span class="material-icons-sharp">subscriptions</span>Subscribe/Pricing</a>
   <a href="https://discord.gg/LegionKillfeed"><span class="material-icons-sharp">forum</span>Discord</a>
@@ -266,10 +266,10 @@ body {
 					<li>(Admin/Owner/Founder)</li>
 				</ul>
 				<div class="expandable" onclick="toggleInfo(this)">
-					<strong>/logs autofeed ↩</strong>
+					<strong>/logs auto download ↩</strong>
 				</div>
 				<ul class="more-info">
-					<li>Assign a channel to auto download logfiles every 4 hours.</li>
+					<li>Assign a channel for automatic log downloads.</li>
 					<li>(Admin/Owner/Founder)</li>
 				</ul>
 				<div class="expandable" onclick="toggleInfo(this)">
@@ -488,7 +488,7 @@ body {
 			<h2>Admin Commands</h2>
 			<ul id="commandsSection">
 				<div class="expandable" onclick="toggleInfo(this)">
-					<strong>/add ban ↩</strong>
+					<strong>/ban add ↩</strong>
 				</div>
 				<ul class="more-info">
 					<li>Ban a gamertag/gamertags</li>
@@ -496,7 +496,7 @@ body {
 					<li>(Moderator/Admin/Owner/Founder)</li>
 				</ul>
 				<div class="expandable" onclick="toggleInfo(this)">
-					<strong>/remove ban ↩</strong>
+					<strong>/ban remove ↩</strong>
 				</div>
 				<ul class="more-info">
 					<li>Unban a gamertag/gamertags</li>
@@ -504,14 +504,14 @@ body {
 					<li>(Moderator/Admin/Owner/Founder)</li>
 				</ul>
 				<div class="expandable" onclick="toggleInfo(this)">
-					<strong>/view bans ↩</strong>
+					<strong>/ban view ↩</strong>
 				</div>
 				<ul class="more-info">
 					<li>View Banlist</li>
 					<li>(Moderator/Admin/Owner/Founder)</li>
 				</ul>
 				<div class="expandable" onclick="toggleInfo(this)">
-					<strong>/add whitelist ↩</strong>
+					<strong>/whitelist add ↩</strong>
 				</div>
 				<ul class="more-info">
 					<li>Whitelist a gamertag/gamertags</li>
@@ -519,7 +519,7 @@ body {
 					<li>(Whitelister or Higher)</li>
 				</ul>
 				<div class="expandable" onclick="toggleInfo(this)">
-					<strong>/remove whitelist ↩</strong>
+					<strong>/whitelist remove ↩</strong>
 				</div>
 				<ul class="more-info">
 					<li>Unwhitelist a gamertag/gamertags</li>
@@ -527,7 +527,7 @@ body {
 					<li>(Whitelister or Higher)</li>
 				</ul>
 				<div class="expandable" onclick="toggleInfo(this)">
-					<strong>/view whitelist ↩</strong>
+					<strong>/whitelist view ↩</strong>
 				</div>
 				<ul class="more-info">
 					<li>View Whitelist</li>
@@ -541,7 +541,7 @@ body {
 					<li>(Moderator/Admin/Owner/Founder)</li>
 				</ul>
 				<div class="expandable" onclick="toggleInfo(this)">
-					<strong>/add priority ↩</strong>
+					<strong>/priority add ↩</strong>
 				</div>
 				<ul class="more-info">
 					<li>Prioritize a gamertag/gamertags</li>
@@ -549,7 +549,7 @@ body {
 					<li>(Moderator/Admin/Owner/Founder)</li>
 				</ul>
 				<div class="expandable" onclick="toggleInfo(this)">
-					<strong>/remove priority ↩</strong>
+					<strong>/priority remove ↩</strong>
 				</div>
 				<ul class="more-info">
 					<li>Unprioritize a gamertag/gamertags</li>
@@ -557,25 +557,25 @@ body {
 					<li>(Moderator/Admin/Owner/Founder)</li>
 				</ul>
 				<div class="expandable" onclick="toggleInfo(this)">
-					<strong>/view priority ↩</strong>
+					<strong>/priority view ↩</strong>
 				</div>
 				<ul class="more-info">
 					<li>View priority list</li>
 					<li>(Moderator/Admin/Owner/Founder)</li>
 				</ul>
 				<div class="expandable" onclick="toggleInfo(this)">
-					<strong>/admin search ↩</strong>
+					<strong>/admin player search ↩</strong>
 				</div>
 				<ul class="more-info">
-					<li>Search for player information</li>
+					<li>Search for a gamertag or Discord member</li>
 					<li>Including whether whitelisted/banned/prioritized and by who & when</li>
 					<li>(Admin/Owner/Founder)</li>
 				</ul>
 				<div class="expandable" onclick="toggleInfo(this)">
-					<strong>/admin plocs ↩</strong>
+					<strong>/admin player locations ↩</strong>
 				</div>
 				<ul class="more-info">
-					<li>View current online players and their locations</li>
+					<li>View current online player locations</li>
 					<li>(Admin/Owner/Founder)</li>
 				</ul>
 				<div class="expandable" onclick="toggleInfo(this)">
@@ -599,14 +599,21 @@ body {
 					<strong>/logs download current ↩</strong>
 				</div>
 				<ul class="more-info">
-					<li>Download the currently in use logfile.</li>
+					<li>Download the current .ADM or .txt logfile.</li>
+					<li>(Admin/Owner/Founder)</li>
+				</ul>
+				<div class="expandable" onclick="toggleInfo(this)">
+					<strong>/logs download kills ↩</strong>
+				</div>
+				<ul class="more-info">
+					<li>Download the current kills-only .ADM or .txt logfile.</li>
 					<li>(Admin/Owner/Founder)</li>
 				</ul>
 				<div class="expandable" onclick="toggleInfo(this)">
 					<strong>/logs download all ↩</strong>
 				</div>
 				<ul class="more-info">
-					<li>Download all .ADM logfiles on your server.</li>
+					<li>Download all .ADM or .txt logfiles on your server.</li>
 					<li>(Admin/Owner/Founder)</li>
 				</ul>
 				<div class="expandable" onclick="toggleInfo(this)">
@@ -656,16 +663,16 @@ body {
 					<li>(Owner/Founder)</li>
 				</ul>
 				<div class="expandable" onclick="toggleInfo(this)">
-					<strong>/admin spawner ↩</strong>
+					<strong>/admin spawner add ↩</strong>
 				</div>
 				<ul class="more-info">
-					<li>Build an event from discord</li>
-					<li>Selection: Items/Static/Vehicle</li>
+					<li>Add items to spawn via events.xml and cfgeventspawns.xml</li>
+					<li>Type: Item, Static, Vehicle, Animal, or Infected</li>
 					<li>X Coord: XXXX (First coord in coords from Logs or iZurvive, not GPS)</li>
 					<li>Z Coord: ZZZZ (Second coord in coords from Logs or iZurvive, not GPS)</li>
 					<li>Type Name: Item/Object/Vehicle name from types.xml</li>
 					<li>Lifetime: How long the item stays spawned for in seconds (permanent spawn set to 3888000)</li>
-					<li>Player Name: Name to reference event in files (whatever you want, but no spaces)</li>
+					<li>Event Name: Name to reference the event in files, with no spaces</li>
 					<li>Nominal: How many to spawn at location</li>
 					<li>Max Amount: Maximum items to spawn at location</li>
 					<li>Min Amount: Minimum items to spawn at location</li>

@@ -10,7 +10,7 @@
 
     <!-- OpenGraph Meta Tags -->
     <meta property="og:title" content="ⓘ Learn more!">
-    <meta property="og:image" content="https://legionkillfeed.github.io/DayZ/static/Legion.png">
+    <meta property="og:image" content="https://killfeed.co/images/logo.webp">
     <meta property="og:url" content="https://killfeed.co/">
     <meta property="og:type" content="website">
     <meta property="og:image:alt" content="Legion Killfeed Logo">
@@ -27,7 +27,7 @@
     <meta name="theme-color" content="#ba9849">
 
     <!-- oEmbed Link -->
-    <link type="application/json+oembed" href="https://legionkillfeed.github.io/DayZ/static/discord_embed.json" />
+    <link type="application/json+oembed" href="https://killfeed.co/assets/json/discord_embed.json" />
 
     <!-- Basic Meta Tags -->
     <meta name="title" content="Legion Killfeed for DayZ">
@@ -49,10 +49,10 @@
         "url": "https://killfeed.co/",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://legionkillfeed.github.io/DayZ/search?q={search_term_string}",
+            "target": "https://killfeed.co/dayz/search?q={search_term_string}",
             "query-input": "required name=search_term_string"
         },
-        "image": "https://legionkillfeed.github.io/DayZ/static/Legion.png",
+        "image": "https://killfeed.co/images/logo.webp",
         "description": "👑 Admin tools
             👁️ Visual Feeds
             🖼️ Customisable Settings
@@ -65,7 +65,7 @@
             "name": "Legion Killfeed for DayZ",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://legionkillfeed.github.io/DayZ/static/Legion.png"
+                "url": "https://killfeed.co/images/logo.webp"
             }
         }
     }
@@ -254,15 +254,15 @@
   <div class="sidenav">
     <a href="https://killfeed.co">
         <div class="logo">
-          <img alt="Legion-Shield" src="https://legionkillfeed.github.io/DayZ/static/Legion.png"/>
+          <img alt="Legion-Shield" src="https://killfeed.co/images/logo.webp"/>
           <h4><span class="logotext">Legion Killfeed</span></h4>
         </div>
       </a>
-        <a href="https://killfeed.co/commandss"><span class="material-icons-sharp">apps</span>Commands & Usage</a>
-        <a href="https://killfeed.co/free-tools/economy-calculator"><span class="material-icons-sharp">calculate</span>Economy Calculator</a>
-        <a href="https://killfeed.co/free-tools/trader-file-generator"><span class="material-icons-sharp">note_add</span>Shoppi Pricing Tool</a>
-        <a href="https://killfeed.co/legal#terms"><span class="material-icons-sharp">policy</span>Terms of Service</a>
-        <a href="https://killfeed.co/legal#privacy"><span class="material-icons-sharp">security</span>Privacy Policy</a>
+        <a href="https://killfeed.co/commands"><span class="material-icons-sharp">apps</span>Commands & Usage</a>
+        <a href="https://killfeed.co/dayz/tools/economy-calculator"><span class="material-icons-sharp">calculate</span>Economy Calculator</a>
+        <a href="https://killfeed.co/dayz/tools/trader-file-generator"><span class="material-icons-sharp">note_add</span>Shoppi Pricing Tool</a>
+        <a href="https://killfeed.co/legal#terms-of-service"><span class="material-icons-sharp">policy</span>Terms of Service</a>
+        <a href="https://killfeed.co/legal#privacy-policy"><span class="material-icons-sharp">security</span>Privacy Policy</a>
         <a href="https://business.gov.au/planning/protect-your-brand-idea-or-creation/copyright"><span class="material-icons-sharp">copyright</span>Copyright 2024</a>
         <a href="https://ko-fi.com/LegionKillfeed"><span class="material-icons-sharp">subscriptions</span>Subscribe/Pricing</a>
         <a href="https://discord.gg/LegionKillfeed"><span class="material-icons-sharp">forum</span>Discord</a>
@@ -712,7 +712,7 @@
         });
     // Function to load the modal HTML from a file
     function loadModal() {
-        fetch('https://legionkillfeed.github.io/DayZ/static/modal.html')
+        fetch('https://killfeed.co/static/modal.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('modalPlaceholder').innerHTML = data;
