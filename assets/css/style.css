@@ -2,17 +2,17 @@
 
 
 :root {
-	--color-primary: #faedc2;
-	--color-danger: #ff0015;
+	--color-primary: #fac2c2;
+	--color-danger: #97000d;
 	--color-success: #2bff00;
-	--color-warning: #ff0000;
-	--color-info-dark: #b89f5b;
-	--color-info-light: #cebd90;
-	--color-white: #faf1bc;
+	--color-warning: #ff9100;
+	--color-info-dark: #b85b5b;
+	--color-info-light: #ce9090;
+	--color-white: #ffffffd5;
 	--color-dark: #000000;
-	--color-light: rgba(247, 236, 189, 0.863);
-	--color-dark-varient: #af883f;
-	--color-primary-varient: #f8da99;
+	--color-light: rgba(255, 255, 255, 0.863);
+	--color-dark-varient: #660000;
+	--color-primary-varient: #b90000;
 	--color-background: #000000;
 
 	--card-border-radius: 2rem;
@@ -55,7 +55,7 @@ body {
 
 footer {
 	background-color: #333;
-	color: #f1c637;
+	color: #6d0000;
 	padding: 1rem;
 	align-items: center;
 }
@@ -89,27 +89,27 @@ span1 {
 h1 {
 	font-weight: 800;
 	font-size: 1.8rem;
-	color: #f7d35c;
+	color: #690000;
 }
 
 h2 {
 	font-size: 1.4rem;
-	color: #dfc265;
+	color: #d64400;
 }
 
 h3 {
 	font-size: 0.87rem;
-	color: #e4be42;
+	color: #e79e00;
 }
 
 h4 {
 	font-size: 0.8rem;
-	color: #ffdc6a;
+	color: #ffb2a8;
 }
 
 h5 {
 	font-size: 0.77rem;
-	color: #f3d571;
+	color: #a83a26;
 }
 
 small {
@@ -706,7 +706,7 @@ th {
 	padding: 12px 20px;
 	margin: 8px 0;
 	box-sizing: border-box;
-	border: 2px solid #fff6c6;
+	border: 2px solid #c52801;
 	border-radius: 4px;
 }
 
@@ -898,7 +898,7 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 100vh;
-	background: linear-gradient(-45deg, #000000, #FFD700, #000000, #FFD700);
+	background: linear-gradient(-45deg, #000000, #460000, #000000, #FFD700);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 }
