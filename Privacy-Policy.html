@@ -6,26 +6,26 @@
 <title>Legion Killfeed Privacy Policy</title>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
 <link rel="stylesheet" href="./static/style.css">
-<link rel="icon" type="image/x-icon" href="./static/favicon.ico">
+<link rel="icon" type="image/png" href="./static/favicon-256x256.png">
 
 <!-- OpenGraph Meta Tags -->
 <meta property="og:title" content="🛡️ Privacy Policy">
-<meta property="og:image" content="https://killfeed.co/images/logo.webp">
-<meta property="og:url" content="https://killfeed.co/legal#privacy-policy">
+<meta property="og:image" content="https://legionkillfeed.github.io/DayZ/static/favicon-256x256.png">
+<meta property="og:url" content="https://legionkillfeed.github.io/DayZ/Privacy-Policy">
 <meta property="og:type" content="website">
 <meta property="og:image:alt" content="Legion Killfeed Logo">
 <meta property="og:locale" content="en_US">
 <meta property="og:image:width" content="256">
 <meta property="og:image:height" content="256">
-<meta name="theme-color" content="#ba9849">
+<meta name="theme-color" content="#ff0000">
 
 <!-- oEmbed Link -->
-<link type="application/json+oembed" href="https://killfeed.co/assets/json/discord_embed.json" />
+<link type="application/json+oembed" href="https://legionkillfeed.github.io/DayZ/static/discord_embed.json" />
 
 <meta name="title" content="Legion Killfeed for DayZ">
-<meta name="description" content="Legion Killfeed privacy policy for DayZ server logs, Nitrado API access, Discord data, customer files, server data, and authorized bot features.">
+<meta name="description" content="Privacy Policy">
 <meta name="keywords"
-	content="Legion Killfeed privacy policy, Legion Killfeed data privacy, DayZ killfeed privacy, Nitrado API token, DayZ server logs, customer files, server data, Discord bot data, DayZ server management, Legion Killfeed, killfeed, commands, discord bot, DayZ bot, DayZ tools, DayZOffline, DayZ community, DayZ killfeed, DayZkillfeed.com">
+	content="Legion Killfeed, killfeed, commands, discord bot, dayz bot, dayz tools, dayzOffline, dayz community, dayz killfeed, dayzkillfeed.com, skynet killfeed, dayz++, Legion DayZ, Legion DayZ Killfeed, skynet, dayz, official, official dayz">
 <meta name="robots" content="index, follow">
 
 <script type="application/ld+json">
@@ -33,20 +33,20 @@
 		"@context": "https://schema.org",
 		"@type": "Website",
 		"name": "Legion Killfeed for DayZ",
-		"url": "https://killfeed.co/legal#privacy-policy",
+		"url": "https://legionkillfeed.github.io/DayZ/Privacy-Policy",
 		"potentialAction": {
 			"@type": "SearchAction",
-			"target": "https://killfeed.co/dayz/search?q={search_term_string}",
+			"target": "https://legionkillfeed.github.io/DayZ/search?q={search_term_string}",
 			"query-input": "required name=search_term_string"
 		},
-		"image": "https://killfeed.co/images/logo.webp",
+		"image": "https://legionkillfeed.github.io/DayZ/static/favicon-256x256.png",
 		"description": "Privacy Policy",
 		"publisher": {
 			"@type": "Organization",
 			"name": "Legion Killfeed for DayZ",
 			"logo": {
 				"@type": "ImageObject",
-				"url": "https://killfeed.co/images/logo.webp"
+				"url": "https://legionkillfeed.github.io/DayZ/static/favicon-256x256.png"
 			}
 		}
 	}
@@ -54,13 +54,13 @@
 <style>
 * {
   box-sizing: border-box;
-  color: #B8A66A;
+  color: #B30000;
 }
 
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  color: #B8A66A;
+  color: #B30000;
 }
 
 body {
@@ -76,11 +76,11 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(226, 174, 106, 0.767);
   }
-  
+
 .section p {
   margin: 10px 0;
   background: #000000;
-  color: #cab469;
+  color: #ff6464;
   }
 
   .section ul {
@@ -96,7 +96,7 @@ body {
     margin: 5px 0;
     border-radius: 5px;
   }
-  
+
   .section ul li a {
     color: rgb(221, 176, 125);
   }
@@ -230,40 +230,88 @@ body {
                 }
             }
         </style>
-        <script>
-        function toggleMenu() {
-          var sidenav = document.querySelector(".sidenav");
-          sidenav.classList.toggle("show");
-        }
-        </script>
-      </head>
-      <body>
-      
-      <div class="sidenav">
-        <a href="https://killfeed.co/">
+        <style id="legion-red-white-theme">
+:root {
+  --color-primary: #ffffff;
+  --color-danger: #ff0000;
+  --color-success: #ffffff;
+  --color-warning: #ff0000;
+  --color-info-dark: #ffffff;
+  --color-info-light: #ffffff;
+  --color-white: #ffffff;
+  --color-dark: #000000;
+  --color-light: rgba(255, 0, 0, 0.16);
+  --color-dark-varient: #ffffff;
+  --color-primary-varient: #ff0000;
+  --color-background: #000000;
+  --box-shadow: 0 0 1.2rem rgba(255, 0, 0, 0.45);
+}
+* { scrollbar-color: #ff0000 #000000; }
+html, body { background: #000000 !important; color: #ffffff !important; }
+body { background-image: none !important; }
+a { color: #ffffff !important; }
+a:hover { color: #ff0000 !important; }
+h1, h2, h3, h4, h5, h6, p, b, strong, small, li, label, span, code, td, th, option, select, input, textarea, .logotext {
+  color: #ffffff !important;
+}
+.sidenav, aside, .sidebar, .titlebar, footer, .section, .container, main, .content {
+  background-color: #000000 !important;
+}
+.sidenav, .titlebar, footer, .section, main > div, .linkedimage > div, .container, table, textarea, input, select, button, .input-box {
+  border-color: #ff0000 !important;
+}
+.section, main > div, .linkedimage > div, table, textarea, input, select, button, .input-box {
+  background: #050505 !important;
+  box-shadow: 0 0 18px rgba(255, 0, 0, 0.35) !important;
+}
+.section ul, .section ul li, .section p, tbody, tr, td, th, textarea, input, select, button, .input-box {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+.sidenav a, aside .sidebar a, .titlebar .nav-links a {
+  color: #ffffff !important;
+  background: #000000 !important;
+  border-left: 3px solid transparent !important;
+}
+.sidenav a:hover, aside .sidebar a:hover, .titlebar .nav-links a:hover {
+  color: #ffffff !important;
+  background: #160000 !important;
+  border-left-color: #ff0000 !important;
+}
+.sidenav .logo img, aside .logo img, .titlebar .logo img {
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.75));
+}
+.material-icons-sharp { color: #ff0000 !important; }
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="https://legionkillfeed.github.io/DayZ/">
   <div class="logo">
-    <img alt="Legion-Shield" src="https://killfeed.co/images/logo.webp"/>
+    <img alt="Legion-Shield" src="https://legionkillfeed.github.io/DayZ/static/favicon-256x256.png"/>
     <h4><span class="logotext">Legion Killfeed</span></h4>
   </div>
   </a>
   <a href="https://killfeed.co/commands"><span class="material-icons-sharp">apps</span>Commands & Usage</a>
+  <a href="https://legionkillfeed.github.io/DayZ/timeline"><span class="material-icons-sharp">schema</span>Evidence Timeline</a>
   <a href="https://killfeed.co/dayz/tools/economy-calculator"><span class="material-icons-sharp">calculate</span>Economy Calculator</a>
   <a href="https://killfeed.co/dayz/tools/trader-file-generator"><span class="material-icons-sharp">note_add</span>Shoppi Pricing Tool</a>
-  <a href="https://killfeed.co/legal#terms-of-service"><span class="material-icons-sharp">policy</span>Terms of Service</a>
-  <a href="https://killfeed.co/legal#privacy-policy"><span class="material-icons-sharp">security</span>Privacy Policy</a>
+  <a href="https://legionkillfeed.github.io/DayZ/Terms-of-Service"><span class="material-icons-sharp">policy</span>Terms of Service</a>
+  <a href="https://legionkillfeed.github.io/DayZ/Privacy-Policy"><span class="material-icons-sharp">security</span>Privacy Policy</a>
   <a href="https://business.gov.au/planning/protect-your-brand-idea-or-creation/copyright"><span class="material-icons-sharp">copyright</span>Copyright 2024</a>
   <a href="https://ko-fi.com/LegionKillfeed"><span class="material-icons-sharp">subscriptions</span>Subscribe/Pricing</a>
   <a href="https://discord.gg/LegionKillfeed"><span class="material-icons-sharp">forum</span>Discord</a>
 </div>
 
 <div class="content">
-	
+
 	<div class="container">
 		<div class=section>
 			<h2>Privacy Policy</h2>
 			<ul><b>Welcome to Legion Killfeed! This privacy policy explains how we handle your data when you use our bot to download logs from Nitrado.net using API tokens. By using our bot, you agree to the terms outlined in this policy.</b></ul>
 		</div>
-		
+
 		<div class=section>
 			<h2>Data Collection</h2>
 			<ul>
@@ -280,7 +328,7 @@ body {
 				<li><strong>Logs Data:</strong> We collect and store the data from logs as stats</li>
 			</ul>
 		</div>
-		
+
 		<div class=section>
 			<h2>Data Usage</h2>
 			<ul>
@@ -294,17 +342,6 @@ body {
 		</div>
 
 		<div class=section>
-			<h2>Public Data Handling Statement</h2>
-			<ul>
-				<li>Legion Killfeed categorically denies the allegation that it collects, sells, abuses, leaks, or misuses customer files or server data.</li>
-				<li>Legion Killfeed uses access only for customer-authorized features, including Nitrado integration, log processing, server tools, killfeeds, stats, and related bot functions.</li>
-				<li>Customer files are not sold. XML files are common DayZ server configuration files, and Legion's own files are regularly shared.</li>
-				<li>Legion states that proof is available, including technical context, records, timelines, screenshots, and evidence showing the source and pattern of these allegations. See <a href="https://they-wish-i.died.space" rel="noopener noreferrer" target="_blank">they-wish-i.died.space</a>.</li>
-				<li>Anonymous Reddit comments, competitor pages, and forum pile-ons should not be treated as proof. Review the privacy policy, live FAQs, customer reviews, and available evidence before relying on claims about data misuse.</li>
-			</ul>
-		</div>
-		
-		<div class=section>
 			<h2>Data Storage</h2>
 			<ul>
 			<p>We store your data as follows:</p>
@@ -314,7 +351,7 @@ body {
 				<li><strong>Global Stats:</strong> Global Player Stats are stored permanently, no personal information is retained, only gamertags.</li>
 			</ul>
 		</div>
-		
+
 		<div class=section>
 			<h2>Data Retention and Deletion</h2>
 			<ul>
@@ -323,7 +360,7 @@ body {
 				<li>The Nitrado API token associated with your account will also be deleted immediately.</li>
 			</ul>
 		</div>
-		
+
 		<div class=section>
 			<h2>Security</h2>
 			<ul>
@@ -333,12 +370,12 @@ body {
 				<li>They don't have to talk, it's just so the enabling of the killfeed is handled internally and closesly monitored.</li>
 			</ul>
 		</div>
-		
+
 		<div class=section>
 			<h2>Changes to This Privacy Policy</h2>
 			<ul>We may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page. You are advised to review this privacy policy periodically for any changes.</ul>
 		</div>
-		
+
 		<div class=section>
 			<h2>Contact Us</h2>
 			<ul>If you have any questions or concerns about this privacy policy, please contact us by opening a ticket in our discord</ul>

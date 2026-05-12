@@ -1,7 +1,13 @@
 {
-    "provider_name": "🌐 Legion Killfeed (for DayZ)",
-    "provider_url": "https://killfeed.co",
-    "author_url": "https://discord.gg/legionkillfeed",
-    "author_name": "🔗 Join our Support Discord",
-    "type": "link"
+  "version": "1.0",
+  "type": "rich",
+  "url": "https://legionkillfeed.github.io/DayZ/timeline",
+  "title": "Legion Killfeed Evidence Timeline",
+  "provider_name": "Legion Killfeed",
+  "provider_url": "https://killfeed.co",
+  "author_name": "Legion Killfeed Support",
+  "author_url": "https://discord.gg/LegionKillfeed",
+  "thumbnail_url": "https://legionkillfeed.github.io/DayZ/static/favicon-256x256.png",
+  "thumbnail_width": 256,
+  "thumbnail_height": 256
 }

@@ -3,15 +3,14 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Legion Killfeed</title>
+    <title>Legion Killfeed - Nitrado DayZ discord & server management bot.</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="./static/style.css">
-    <link rel="icon" type="image/x-icon" href="./static/favicon.ico">
-
+    <link rel="icon" type="image/png" href="./static/favicon-256x256.png">
     <!-- OpenGraph Meta Tags -->
-    <meta property="og:title" content="ⓘ Learn more!">
-    <meta property="og:image" content="https://killfeed.co/images/logo.webp">
-    <meta property="og:url" content="https://killfeed.co/">
+    <meta property="og:title" content="Legion Killfeed - Nitrado DayZ discord & server management bot.">
+    <meta property="og:image" content="https://legionkillfeed.github.io/DayZ/static/favicon-256x256.png">
+    <meta property="og:url" content="https://legionkillfeed.github.io/DayZ/">
     <meta property="og:type" content="website">
     <meta property="og:image:alt" content="Legion Killfeed Logo">
     <meta property="og:locale" content="en_US">
@@ -24,10 +23,11 @@
         🗺️ Heatmaps
         📡 Base Radars
         ➕ More">
-    <meta name="theme-color" content="#ba9849">
+    <meta name="theme-color" content="#ff0000">
+    <link href="https://www.killfeed.co/" rel="canonical"/>
 
     <!-- oEmbed Link -->
-    <link type="application/json+oembed" href="https://killfeed.co/assets/json/discord_embed.json" />
+    <link type="application/json+oembed" href="https://legionkillfeed.github.io/DayZ/static/discord_embed.json" />
 
     <!-- Basic Meta Tags -->
     <meta name="title" content="Legion Killfeed for DayZ">
@@ -38,7 +38,7 @@
         🗺️ Heatmaps
         📡 Base Radars
         ➕ More">
-    <meta name="keywords" content="Legion Killfeed, killfeed, commands, discord bot, DayZ bot, DayZ tools, DayZOffline, DayZ community, DayZ killfeed, DayZkillfeed.com, DayZ server logs, Nitrado integration, DayZ server management, Trustpilot reviews, DayZ console killfeed, data privacy, server automation, skynet killfeed, DayZ++, Legion DayZ, Legion DayZ Killfeed, skynet, DayZ, official, official DayZ">
+    <meta name="keywords" content="Legion Killfeed, killfeed, commands, discord bot, dayz bot, dayz tools, dayzOffline, dayz community, dayz killfeed, dayzkillfeed.com, skynet killfeed, dayz++, Legion DayZ, Legion DayZ Killfeed, skynet, dayz, official, official dayz">
     <meta name="robots" content="index, follow">
 
     <script type="application/ld+json">
@@ -46,13 +46,13 @@
         "@context": "https://schema.org",
         "@type": "Website",
         "name": "Legion Killfeed for DayZ",
-        "url": "https://killfeed.co/",
+        "url": "https://legionkillfeed.github.io/DayZ/",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://killfeed.co/dayz/search?q={search_term_string}",
+            "target": "https://legionkillfeed.github.io/DayZ/search?q={search_term_string}",
             "query-input": "required name=search_term_string"
         },
-        "image": "https://killfeed.co/images/logo.webp",
+        "image": "https://legionkillfeed.github.io/DayZ/static/favicon-256x256.png",
         "description": "👑 Admin tools
             👁️ Visual Feeds
             🖼️ Customisable Settings
@@ -65,7 +65,7 @@
             "name": "Legion Killfeed for DayZ",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://killfeed.co/images/logo.webp"
+                "url": "https://legionkillfeed.github.io/DayZ/static/favicon-256x256.png"
             }
         }
     }
@@ -73,13 +73,13 @@
     <style>
       * {
         box-sizing: border-box;
-        color: #B8A66A;
+        color: #B30000;
       }
 
       body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
-        color: #B8A66A;
+        color: #B30000;
         background: linear-gradient(90deg, #ffe2ab, #525252, #ffe2ab, #1f1f1f, #ffe2ab, #272727);
         background-size: 300% 300%;
         animation: gradient 25s ease infinite;
@@ -180,27 +180,6 @@
           background-position: 0% 50%;
         }
       }
-    /* The Modal (background) */
-    .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    }
-    /* Modal Content/Box */
-    .modal-content {
-        background-color: #c9a65b;
-        margin: 15% auto; /* 15% from the top and centered */
-        padding: 20px;
-        border: 1px solid #7a0000;
-        width: 80%; /* Could be more or less, depending on screen size */
-    }
 
 /* Media Queries for Mobile Devices */
 @media screen and (max-width: 600px) {
@@ -242,39 +221,83 @@
     }
 }
     </style>
-    <script>
-      function toggleMenu() {
-        var sidenav = document.querySelector(".sidenav");
-        sidenav.classList.toggle("show");
-      }
-    </script>
-  </head>
-  <body>
-  
-  <div class="sidenav">
-    <a href="https://killfeed.co">
+<style id="legion-red-white-theme">
+:root {
+  --color-primary: #ffffff;
+  --color-danger: #ff0000;
+  --color-success: #ffffff;
+  --color-warning: #ff0000;
+  --color-info-dark: #ffffff;
+  --color-info-light: #ffffff;
+  --color-white: #ffffff;
+  --color-dark: #000000;
+  --color-light: rgba(255, 0, 0, 0.16);
+  --color-dark-varient: #ffffff;
+  --color-primary-varient: #ff0000;
+  --color-background: #000000;
+  --box-shadow: 0 0 1.2rem rgba(255, 0, 0, 0.45);
+}
+* { scrollbar-color: #ff0000 #000000; }
+html, body { background: #000000 !important; color: #ffffff !important; }
+body { background-image: none !important; }
+a { color: #ffffff !important; }
+a:hover { color: #ff0000 !important; }
+h1, h2, h3, h4, h5, h6, p, b, strong, small, li, label, span, code, td, th, option, select, input, textarea, .logotext {
+  color: #ffffff !important;
+}
+.sidenav, aside, .sidebar, .titlebar, footer, .section, .container, main, .content {
+  background-color: #000000 !important;
+}
+.sidenav, .titlebar, footer, .section, main > div, .linkedimage > div, .container, table, textarea, input, select, button, .input-box {
+  border-color: #ff0000 !important;
+}
+.section, main > div, .linkedimage > div, table, textarea, input, select, button, .input-box {
+  background: #050505 !important;
+  box-shadow: 0 0 18px rgba(255, 0, 0, 0.35) !important;
+}
+.section ul, .section ul li, .section p, tbody, tr, td, th, textarea, input, select, button, .input-box {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+.sidenav a, aside .sidebar a, .titlebar .nav-links a {
+  color: #ffffff !important;
+  background: #000000 !important;
+  border-left: 3px solid transparent !important;
+}
+.sidenav a:hover, aside .sidebar a:hover, .titlebar .nav-links a:hover {
+  color: #ffffff !important;
+  background: #160000 !important;
+  border-left-color: #ff0000 !important;
+}
+.sidenav .logo img, aside .logo img, .titlebar .logo img {
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.75));
+}
+.material-icons-sharp { color: #ff0000 !important; }
+</style>
+</head>
+<body>
+    <div class="sidenav">
+      <a href="https://legionkillfeed.github.io/DayZ/">
         <div class="logo">
-          <img alt="Legion-Shield" src="https://killfeed.co/images/logo.webp"/>
+          <img alt="Legion-Shield" src="https://legionkillfeed.github.io/DayZ/static/favicon-256x256.png"/>
           <h4><span class="logotext">Legion Killfeed</span></h4>
         </div>
       </a>
-        <a href="https://killfeed.co/commands"><span class="material-icons-sharp">apps</span>Commands & Usage</a>
-        <a href="https://killfeed.co/dayz/tools/economy-calculator"><span class="material-icons-sharp">calculate</span>Economy Calculator</a>
-        <a href="https://killfeed.co/dayz/tools/trader-file-generator"><span class="material-icons-sharp">note_add</span>Shoppi Pricing Tool</a>
-        <a href="https://killfeed.co/legal#terms-of-service"><span class="material-icons-sharp">policy</span>Terms of Service</a>
-        <a href="https://killfeed.co/legal#privacy-policy"><span class="material-icons-sharp">security</span>Privacy Policy</a>
-        <a href="https://business.gov.au/planning/protect-your-brand-idea-or-creation/copyright"><span class="material-icons-sharp">copyright</span>Copyright 2024</a>
-        <a href="https://ko-fi.com/LegionKillfeed"><span class="material-icons-sharp">subscriptions</span>Subscribe/Pricing</a>
-        <a href="https://discord.gg/LegionKillfeed"><span class="material-icons-sharp">forum</span>Discord</a>
+  <a href="https://legionkillfeed.github.io/DayZ/commands"><span class="material-icons-sharp">apps</span>Commands & Usage</a>
+  <a href="https://legionkillfeed.github.io/DayZ/timeline"><span class="material-icons-sharp">schema</span>Evidence Timeline</a>
+  <a href="https://legionkillfeed.github.io/DayZ/dayz/tools/economy-calculator"><span class="material-icons-sharp">calculate</span>Economy Calculator</a>
+  <a href="https://legionkillfeed.github.io/DayZ/dayz/tools/trader-file-generator"><span class="material-icons-sharp">note_add</span>Shoppi Pricing Tool</a>
+  <a href="https://legionkillfeed.github.io/DayZ/Terms-of-Service"><span class="material-icons-sharp">policy</span>Terms of Service</a>
+  <a href="https://legionkillfeed.github.io/DayZ/Privacy-Policy"><span class="material-icons-sharp">security</span>Privacy Policy</a>
+  <a href="https://business.gov.au/planning/protect-your-brand-idea-or-creation/copyright"><span class="material-icons-sharp">copyright</span>Copyright 2024</a>
+  <a href="https://ko-fi.com/LegionKillfeed"><span class="material-icons-sharp">subscriptions</span>Subscribe/Pricing</a>
+  <a href="https://discord.gg/LegionKillfeed"><span class="material-icons-sharp">forum</span>Discord</a>
 	</div>
     <div class="content">
 		<div class="container">
 			<div id="content"></div>
 		</div>
     </div>
-
-    <!-- Placeholder for the Modal -->
-    <div id="modalPlaceholder"></div>
 
     <script>
         function toggleInfo(container) {
@@ -710,36 +733,7 @@
                 document.getElementById('output').textContent = jsonOutput;
             }
         });
-    // Function to load the modal HTML from a file
-    function loadModal() {
-        fetch('https://killfeed.co/static/modal.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('modalPlaceholder').innerHTML = data;
-            var modal = document.getElementById("myModal");
-            var btn = document.getElementById("copyrightBtn");
-            var span = document.getElementsByClassName("close")[0];
-
-            btn.onclick = function() {
-                modal.style.display = "block";
-            }
-
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        });
-    }
-
-    // Load the modal when the page loads
-    window.onload = loadModal;
-</script>
-
+    </script>
 </body>
-</html>
 
+</html>

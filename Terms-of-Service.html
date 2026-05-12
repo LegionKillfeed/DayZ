@@ -6,47 +6,47 @@
 <title>Legion Killfeed Terms of Service</title>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
 	<link rel="stylesheet" href="./static/style.css">
-	<link rel="icon" type="image/x-icon" href="./static/favicon.ico">
-	
+	<link rel="icon" type="image/png" href="./static/favicon-256x256.png">
+
 	<!-- OpenGraph Meta Tags -->
 	<meta property="og:title" content="⚖ Terms of Service">
-	<meta property="og:image" content="https://killfeed.co/images/logo.webp">
-	<meta property="og:url" content="https://killfeed.co/legal#terms-of-service">
+	<meta property="og:image" content="https://legionkillfeed.github.io/DayZ/static/favicon-256x256.png">
+	<meta property="og:url" content="https://legionkillfeed.github.io/DayZ/Terms-of-Service">
 	<meta property="og:type" content="website">
 	<meta property="og:image:alt" content="Legion Killfeed Logo">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:image:width" content="256">
 	<meta property="og:image:height" content="256">
-	<meta name="theme-color" content="#ba9849">
-	
+	<meta name="theme-color" content="#B30000">
+
 	<!-- oEmbed Link -->
-	<link type="application/json+oembed" href="https://killfeed.co/assets/json/discord_embed.json" />
-	
+	<link type="application/json+oembed" href="https://legionkillfeed.github.io/DayZ/static/discord_embed.json" />
+
 	<meta name="title" content="Legion Killfeed for DayZ">
-	<meta name="description" content="Legion Killfeed terms of service, refund policy, data handling statement, customer file policy, reviews, and DayZ server management terms.">
+	<meta name="description" content="Terms of Service">
 	<meta name="keywords"
-		content="Legion Killfeed terms, Legion Killfeed privacy, DayZ killfeed reviews, Trustpilot reviews, DayZ server logs, Nitrado integration, customer files, server data, DayZ server management, Legion Killfeed, killfeed, commands, discord bot, DayZ bot, DayZ tools, DayZOffline, DayZ community, DayZ killfeed, DayZkillfeed.com">
+		content="Legion Killfeed, killfeed, commands, discord bot, dayz bot, dayz tools, dayzOffline, dayz community, dayz killfeed, dayzkillfeed.com, skynet killfeed, dayz++, Legion DayZ, Legion DayZ Killfeed, skynet, dayz, official, official dayz">
 	<meta name="robots" content="index, follow">
-	
+
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
 			"@type": "Website",
 			"name": "Legion Killfeed for DayZ",
-			"url": "https://killfeed.co/legal#terms-of-service",
+			"url": "https://legionkillfeed.github.io/DayZ/Terms-of-Service",
 			"potentialAction": {
 				"@type": "SearchAction",
-				"target": "https://killfeed.co/dayz/search?q={search_term_string}",
+				"target": "https://legionkillfeed.github.io/DayZ/search?q={search_term_string}",
 				"query-input": "required name=search_term_string"
 			},
-			"image": "https://killfeed.co/images/logo.webp",
-			"description": "Terms of Service",
+			"image": "https://legionkillfeed.github.io/DayZ/static/favicon-256x256.png",
+			"description": "Privacy Policy",
 			"publisher": {
 				"@type": "Organization",
 				"name": "Legion Killfeed for DayZ",
 				"logo": {
 					"@type": "ImageObject",
-					"url": "https://killfeed.co/images/logo.webp"
+					"url": "https://legionkillfeed.github.io/DayZ/static/favicon-256x256.png"
 				}
 			}
 		}
@@ -54,13 +54,13 @@
 <style>
 * {
   box-sizing: border-box;
-  color: #B8A66A;
+  color: #B30000;
 }
 
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  color: #B8A66A;
+  color: #B30000;
 }
 
 body {
@@ -76,7 +76,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(226, 174, 106, 0.767);
   }
-  
+
 .section p {
   margin: 10px 0;
   background: #000000;
@@ -96,7 +96,7 @@ body {
     margin: 5px 0;
     border-radius: 5px;
   }
-  
+
   .section ul li a {
     color: rgb(221, 176, 125);
   }
@@ -231,27 +231,75 @@ body {
                 }
             }
         </style>
-        <script>
-        function toggleMenu() {
-          var sidenav = document.querySelector(".sidenav");
-          sidenav.classList.toggle("show");
-        }
-        </script>
-      </head>
-      <body>
-      
-      <div class="sidenav">
-        <a href="https://killfeed.co/">
+        <style id="legion-red-white-theme">
+:root {
+  --color-primary: #ffffff;
+  --color-danger: #ff0000;
+  --color-success: #ffffff;
+  --color-warning: #ff0000;
+  --color-info-dark: #ffffff;
+  --color-info-light: #ffffff;
+  --color-white: #ffffff;
+  --color-dark: #000000;
+  --color-light: rgba(255, 0, 0, 0.16);
+  --color-dark-varient: #ffffff;
+  --color-primary-varient: #ff0000;
+  --color-background: #000000;
+  --box-shadow: 0 0 1.2rem rgba(255, 0, 0, 0.45);
+}
+* { scrollbar-color: #ff0000 #000000; }
+html, body { background: #000000 !important; color: #ffffff !important; }
+body { background-image: none !important; }
+a { color: #ffffff !important; }
+a:hover { color: #ff0000 !important; }
+h1, h2, h3, h4, h5, h6, p, b, strong, small, li, label, span, code, td, th, option, select, input, textarea, .logotext {
+  color: #ffffff !important;
+}
+.sidenav, aside, .sidebar, .titlebar, footer, .section, .container, main, .content {
+  background-color: #000000 !important;
+}
+.sidenav, .titlebar, footer, .section, main > div, .linkedimage > div, .container, table, textarea, input, select, button, .input-box {
+  border-color: #ff0000 !important;
+}
+.section, main > div, .linkedimage > div, table, textarea, input, select, button, .input-box {
+  background: #050505 !important;
+  box-shadow: 0 0 18px rgba(255, 0, 0, 0.35) !important;
+}
+.section ul, .section ul li, .section p, tbody, tr, td, th, textarea, input, select, button, .input-box {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+.sidenav a, aside .sidebar a, .titlebar .nav-links a {
+  color: #ffffff !important;
+  background: #000000 !important;
+  border-left: 3px solid transparent !important;
+}
+.sidenav a:hover, aside .sidebar a:hover, .titlebar .nav-links a:hover {
+  color: #ffffff !important;
+  background: #160000 !important;
+  border-left-color: #ff0000 !important;
+}
+.sidenav .logo img, aside .logo img, .titlebar .logo img {
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.75));
+}
+.material-icons-sharp { color: #ff0000 !important; }
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="https://legionkillfeed.github.io/DayZ/">
   <div class="logo">
-    <img alt="Legion-Shield" src="https://killfeed.co/images/logo.webp"/>
+    <img alt="Legion-Shield" src="https://legionkillfeed.github.io/DayZ/static/favicon-256x256.png"/>
     <h4><span class="logotext">Legion Killfeed</span></h4>
   </div>
   </a>
   <a href="https://killfeed.co/commands"><span class="material-icons-sharp">apps</span>Commands & Usage</a>
+  <a href="https://legionkillfeed.github.io/DayZ/timeline"><span class="material-icons-sharp">schema</span>Evidence Timeline</a>
   <a href="https://killfeed.co/dayz/tools/economy-calculator"><span class="material-icons-sharp">calculate</span>Economy Calculator</a>
   <a href="https://killfeed.co/dayz/tools/trader-file-generator"><span class="material-icons-sharp">note_add</span>Shoppi Pricing Tool</a>
-  <a href="https://killfeed.co/legal#terms-of-service"><span class="material-icons-sharp">policy</span>Terms of Service</a>
-  <a href="https://killfeed.co/legal#privacy-policy"><span class="material-icons-sharp">security</span>Privacy Policy</a>
+  <a href="https://legionkillfeed.github.io/DayZ/Terms-of-Service"><span class="material-icons-sharp">policy</span>Terms of Service</a>
+  <a href="https://legionkillfeed.github.io/DayZ/Privacy-Policy"><span class="material-icons-sharp">security</span>Privacy Policy</a>
   <a href="https://business.gov.au/planning/protect-your-brand-idea-or-creation/copyright"><span class="material-icons-sharp">copyright</span>Copyright 2024</a>
   <a href="https://ko-fi.com/LegionKillfeed"><span class="material-icons-sharp">subscriptions</span>Subscribe/Pricing</a>
   <a href="https://discord.gg/LegionKillfeed"><span class="material-icons-sharp">forum</span>Discord</a>
@@ -268,22 +316,19 @@ body {
 		<div class="section">
 			<h3>Refund Policy:</h3>
 			<ul>
-			<li>Upon subscribing to Legion Killfeed, we offer a 5-day refund window for all new subscribers. During this
-				period, if you are unsatisfied with our service or encounter any issues, you are eligible for a full
-				refund of your subscription fee upon request.</li>
-			<li>However, after the initial 5-day period, Legion Killfeed has a strict no refund policy. This policy
-				applies to all subscribers, and no exceptions will be made.</li>
+			<li>Legion Killfeed has a strict no refund policy. This policy
+				applies to all subscribers, RARELY, exceptions will be made, circumstances.</li>
 			</ul>
-			
+
 			<h3>Reasons for our No Refund Policy:</h3>
 			<ul>
-				<li><b>Access to Premium Content:</b> 
-					Upon subscribing to Legion Killfeed, you gain access to our premium content and services. 
+				<li><b>Access to Premium Content:</b>
+					Upon subscribing to Legion Killfeed, you gain access to our premium content and services.
 					This includes exclusive features that enhance your gaming experience.
 					As such, we are unable to provide refunds for the service you have already used.</li>
-				<li><b>Ongoing Maintenance and Development:</b> 
-					To ensure the best experience for all our subscribers, we continually invest in the maintenance, 
-					development, and improvement of Legion Killfeed. 
+				<li><b>Ongoing Maintenance and Development:</b>
+					To ensure the best experience for all our subscribers, we continually invest in the maintenance,
+					development, and improvement of Legion Killfeed.
 					By implementing a no refund policy, we can allocate our resources effectively and focus on delivering
 					high-quality content and updates.</li>
 				<li><b>Licensing and Intellectual Property:</b>
@@ -291,7 +336,7 @@ body {
 					rights. Providing refunds after the 5-day period could lead to potential misuse or
 					unauthorized distribution of our content, which we aim to prevent.</li>
 				<li><b>Fairness to All Subscribers:</b>
-					By maintaining a consistent no refund policy, we treat all subscribers equally. 
+					By maintaining a consistent no refund policy, we treat all subscribers equally.
 					This policy ensures that all users receive the same level of service, and no
 					preferential treatment is granted to specific individuals.</li>
 			</ul>
@@ -332,20 +377,7 @@ body {
 			<li>If you have any questions or require further clarification, please do not hesitate to contact us via
 				Discord.</li>
 		</ul>
-			<h3>Public Statement on Customer Files and Server Data:</h3>
-		<ul>
-			<li>Legion Killfeed categorically denies the allegation that it collects, sells, abuses, leaks, or misuses customer files or server data. That allegation is false, malicious, and commercially damaging.</li>
-			<li>Legion Killfeed uses access only for customer-authorized features, including Nitrado integration, log processing, server tools, killfeeds, stats, and related Discord bot functions.</li>
-			<li>Customer server files and XML files are not sold. XML files are common DayZ server configuration files, and Legion's own files are regularly shared.</li>
-			<li>Legion Killfeed states that proof is available, including technical context, records, timelines, screenshots, and evidence showing the source and pattern of these allegations. See <a href="https://they-wish-i.died.space" rel="noopener noreferrer" target="_blank">they-wish-i.died.space</a>.</li>
-			<li>Anonymous Reddit comments, competitor pages, and forum pile-ons should not be treated as proof. Anyone evaluating Legion Killfeed should ask for evidence and review the published privacy policy, FAQs, and customer reviews.</li>
-		</ul>
-			<h3>Reviews and Reputation:</h3>
-		<ul>
-			<li>Legion Killfeed reviews are published on the live <a href="https://killfeed.co/reviews">reviews page</a> and Trustpilot. The live FAQ records Legion Killfeed as rated 4.98 out of 5 based on 56 Trustpilot reviews.</li>
-			<li>Legion Killfeed does not rely on outbound advertising or seek people out; DayZ server owners find Legion through search, customer use, public reviews, and community reputation.</li>
-		</ul>
-			<h3>Thank you for choosing Legion Killfeed as your preferred killfeed. We strive to provide you with the most 
+			<h3>Thank you for choosing Legion Killfeed as your preferred killfeed. We strive to provide you with the most
 				reliable DayZ Killfeed Bot.</h3>
 		</div>
 	</div>
