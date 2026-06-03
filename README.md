@@ -2,7 +2,7 @@
 Support links
 # [Home](https://killfeed.co/)
 # [DayZ Item Search](https://killfeed.co/dayz/search)
-# [Spawn Gear Loadout Generator](https://killfeed.co/dayz/tools/generate-loadout)
+# [Spawn Gear Loadout Generator](https://killfeed.co/tools/generate-loadout)
 # [Commands](https://killfeed.co/commands)
 # [Privacy Policy](https://killfeed.co/legal#privacy-policy)
 # [Terms of Service](https://killfeed.co/legal#terms-of-service)
@@ -10,7 +10,7 @@ Support links
 ## [Commands](https://killfeed.co/commands)
 ## [FAQs](https://killfeed.co/faqs)
 ## [Legal](https://killfeed.co/legal)
-## [Free DayZ Tools](https://killfeed.co/dayz/tools)
+## [Free DayZ Tools](https://killfeed.co/tools/)
 ## [Video Tutorials](https://killfeed.co/videos)
 ## [Reviews](https://killfeed.co/reviews)
 
@@ -26,7 +26,7 @@ A killfeed tracks and displays player kills, deaths, and other significant in-ga
 Using a killfeed like [Legion Killfeed](https://killfeed.co) improves player experience, server transparency, and admin oversight. It helps administrators monitor in-game activity while allowing players to track kills, deaths, performance, and major server events.
 
 ## How does Legion Killfeed differ from other killfeeds?
-Legion Killfeed, available at [Killfeed.co](https://killfeed.co), is built specifically for DayZ console servers and integrates directly with Discord. It offers semi-real-time feeds, visual PVP and PVE data, stats, leaderboards, heatmaps, base radars, ticket tools, server tools, automation, economy features, and broad customization without feature paywalls.
+Legion Killfeed, available through [the official site](https://killfeed.co), is built specifically for DayZ console servers and integrates directly with Discord. It offers semi-real-time feeds, visual PVP and PVE data, stats, leaderboards, heatmaps, base radars, ticket tools, server tools, automation, economy features, and broad customization without feature paywalls.
 
 ## Can I customize the events tracked by Legion Killfeed?
 Yes, [Legion Killfeed](https://killfeed.co) is highly customizable. You can configure tracked events, feed channels, embed colours, server branding, logos, economy settings, bounty settings, alerts, and other server-specific options.
@@ -110,7 +110,7 @@ Customer review themes include fast setup help, responsive support, simple comma
 ## [Commands](https://killfeed.co/commands)
 ## [FAQs](https://killfeed.co/faqs)
 ## [Legal](https://killfeed.co/legal)
-## [Free DayZ Tool](https://killfeed.co/dayz/tools)
+## [Free DayZ Tool](https://killfeed.co/tools/)
 ## [Sick Beats](https://killfeed.co/audio)
 ## [Reviews](https://killfeed.co/reviews)
 
@@ -147,7 +147,7 @@ Customer review themes include fast setup help, responsive support, simple comma
 
 > [!NOTE]
 > Here are some additional DayZ tools and information.
-> | [`Legion's Privacy & ToS`](https://killfeed.co/legal "Click to open Legion's Website") | [`DayZ Specific File Validator`](https://dayz.modding.click/file-validator "Click to view the dayz specific file validator") |  [`DayZ Compare Tool`](https://killfeed.co/dayz/compare-files "Click to jump to Dayz Compare Tool") | [`DayZ Help`](https://killfeed.co/dayz "Click to go to Legion's website") | [`Code Reducing Tool`](https://modding.click/code-reducer) |
+> | [`Legion's Privacy & ToS`](https://killfeed.co/legal "Click to open Legion's Website") | [`DayZ Specific File Validator`](https://dayz.modding.click/file-validator "Click to view the dayz specific file validator") |  [`DayZ Compare Tool`](https://killfeed.co/tools/compare-files "Click to jump to Dayz Compare Tool") | [`DayZ Help`](https://killfeed.co/dayz/ "Click to go to Legion's website") | [`Code Reducing Tool`](https://modding.click/code-reducer) |
 > |------|------|------|------|------|
 
 ---
